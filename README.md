@@ -1,1 +1,2 @@
 # grupo_8_International_Shoes
+Solucion de conflictos
