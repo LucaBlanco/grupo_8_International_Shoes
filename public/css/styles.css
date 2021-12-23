@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: black;
+}
+body{
+    font-family: 'Barlow', sans-serif;
+    background-color: whitesmoke;
+}
+
+div.top-header{
+    padding: 5%;
+    font-size: 12px;
+    text-align: center;
+}
+
+p.nombre{
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    text-align: justify;
+}
+
+img{
+    display:block;
+    margin:auto;
+        
+}
+header nav{
+    font-size: 12px;
+}
+
+header ul li{
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+    }
+header ul li{
+    text-align: center;
+}
+
+header .form .input{
+    background-color: #FFF;
+    border: 1px solid #000;
+    outline: none;
+    color: #666;
+    padding: 2px;
+}
+header .form .submit{
+    background-color: #FFF;
+    border: 1px solid #000;
+    color: #666;
+    width: 10%;
+}
+
+header div.top-header p{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
