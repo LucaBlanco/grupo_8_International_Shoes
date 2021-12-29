@@ -15,3 +15,8 @@ app.get('/',(req, res)=>{
     let rutaIndex= path.resolve('./views/home.html');
     res.sendFile(rutaIndex);
 })
+
+app.get('/login',(req, res)=>{
+    let rutaIndex= path.resolve('./views/login.html');
+    res.sendFile(rutaIndex);
+})
