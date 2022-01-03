@@ -20,3 +20,8 @@ app.get('/login',(req, res)=>{
     let rutaIndex= path.resolve('./views/login.html');
     res.sendFile(rutaIndex);
 })
+
+app.get('/carrito',(req, res)=>{
+    let rutaIndex= path.resolve('./views/carrito.html');
+    res.sendFile(rutaIndex);
+})
