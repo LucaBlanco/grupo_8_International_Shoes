@@ -29,7 +29,7 @@ p.nombre{
 img{
     display:block;
     margin:auto;
-        
+    width: 25%;
 }
 header nav{
     font-size: 12px;
