@@ -107,6 +107,12 @@ main{
     text-align: center;
     padding: 2% 0px 100% 0px;
 }
+.login{
+    width: 170px;
+    border-color:slategrey;
+    border-style: outset;
+    border-radius: 3;
+}
 input{
     border-radius: 2%;
     border-color: #000;
@@ -141,4 +147,24 @@ input{
 }
 .cantidad-container, .total-container{
     display: grid;
+}
+
+/*REGISTRO */
+
+.registro{
+    display: block;
+    margin: 10px auto;
+    border-radius: 3px;
+    border-color: slategrey;
+    border-style: outset;
+    width: 80%;
+    block-size: 25px;
+
+}
+.boton{
+    width: 50px;
+    block-size: 25px;
+}
+main .register{
+    display: block;
 }
