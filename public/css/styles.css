@@ -108,3 +108,60 @@ input{
     text-align: center;
 }
 
+footer{
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* .caja-1{
+    margin: 10px;
+} */
+
+.caja-4-2 ul{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    
+}
+
+.caja-4-1 ul li{
+    margin: 5px;
+    
+}
+
+.caja-2 ul li{
+    margin: 5px; 
+}
+
+footer ul li{
+    list-style-type: none;
+  
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #FFF;
+    
+}
+
+/* ICONOS ESTILOS */
+div article {
+    margin: 5px 10px;
+}
+article i{
+    font-size: 20px;
+    border-radius: 5px; 
+    border: 2px outset #D4D4D4;
+    padding: 5px;
+}
+article {
+  display:inline-block ;
+  justify-content: center;
+  
+  }
+
+  .medios-de-pago-logos i{
+      font-size: 50px;
+  }
