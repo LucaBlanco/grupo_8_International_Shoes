@@ -26,9 +26,10 @@ p.nombre{
     font-weight: bolder;
 }
 
-img{
+header img{
     display:block;
     margin:auto;
+    width: 30%;
         
 }
 header nav{
@@ -76,7 +77,13 @@ margin-left: 15%;
 }
 .paginas{
     margin: 6px;
+    border: solid;
+    border-style:outset;
+    border-color: grey;
+    margin: 0 30% 3px 30%;
+
 }
+
 
 header div.top-header p{
     text-align: center;
@@ -99,6 +106,12 @@ main{
     align-items: center;
     text-align: center;
     padding: 2% 0px 100% 0px;
+}
+.login{
+    width: 170px;
+    border-color:slategrey;
+    border-style: outset;
+    border-radius: 3;
 }
 input{
     border-radius: 2%;
@@ -165,3 +178,50 @@ article {
   .medios-de-pago-logos i{
       font-size: 50px;
   }
+
+
+/*Carrito*/
+.carrito{
+    width: 100%;
+    height: 550px;
+    background-color: white;
+    padding-top: 30px;
+}
+
+.cantidad, .total{
+    border: dashed 2px #DDDDDD;
+    border-radius: 2px;
+    width: 65px;
+    height: 33px;
+}
+
+.item{
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 30px 5px 30px;
+    padding: 20px 20px 20px 20px;
+}
+.cantidad-container, .total-container{
+    display: grid;
+}
+
+/*REGISTRO */
+
+.registro{
+    display: block;
+    margin: 10px auto;
+    border-radius: 3px;
+    border-color: slategrey;
+    border-style: outset;
+    width: 80%;
+    block-size: 25px;
+
+}
+.boton{
+    width: 50px;
+    block-size: 25px;
+}
+main .register{
+    display: block;
+}

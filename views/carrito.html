@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="carrito">
+        <div class="item">
+            <img src="/imagenes/item_vacio.jpg" alt="">
+            <h2>{{nombre_producto}}</h2>
+            <h3>Talle</h3>
+            <p>{{talle}}</p>
+            <div class="cantidad-container">
+                <label for="cantidad">Cantidad</label>
+                <select name="cantidad" id="cantidad" class="cantidad">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="total-container">
+                <label for="">Total</label>
+                <p class="total">{{total}}</p>
+            </div>
+            <i class="far fa-trash-alt"></i>
+        </div>
+        <div class="item">
+            <img src="/imagenes/item_vacio.jpg" alt="">
+            <h2>{{nombre_producto}}</h2>
+            <h3>Talle</h3>
+            <p>{{talle}}</p>
+            <div class="cantidad-container">
+                <label for="cantidad">Cantidad</label>
+                <select name="cantidad" id="cantidad" class="cantidad">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="total-container">
+                <label for="">Total</label>
+                <p class="total">{{total}}</p>
+            </div>
+            <i class="far fa-trash-alt"></i>
+        </div>
+    </div>
+</body>
+</html>
