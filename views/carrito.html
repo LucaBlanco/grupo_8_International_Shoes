@@ -37,7 +37,7 @@
             </div>
             <div class="grid-cont">
                 <label for="">Total</label>
-                <p class="total">{{total}}</p>
+                <p class="total">$ {{total}}</p>
             </div>
             <i class="far fa-trash-alt"></i>
         </div>
@@ -65,10 +65,21 @@
             </div>
             <div class="grid-cont">
                 <label for="">Total</label>
-                <p class="total">{{total}}</p>
+                <p class="total">$ {{total}}</p>
             </div>
             <i class="far fa-trash-alt"></i>
         </div>
+        <div class="finalizar-compra">
+            <form action="#" method="post" class="compra-form">
+                <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                <input type="text" name="domicilio" placeholder="Domicilio">
+                <input type="number" name="telefono" placeholder="Teléfono">
+                <input type="email" name="e-mail" placeholder="E-mail">
+                <span>TOTAL: $ {{ totales }}</span>
+                <button type="submit" class="btn-subm-compra">FINALIZAR COMPRA <i class="fas fa-shopping-cart"></i></button>
+            </form>
+        </div>
     </div>
+   
 </body>
 </html>
