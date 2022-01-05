@@ -106,7 +106,7 @@ main{
     background-color: lightgray;
     align-items: center;
     text-align: center;
-    padding: 2% 0px 100% 0px;
+    padding: 2% 0px 5% 0px;
 }
 .login{
     width: 170px;
@@ -127,6 +127,7 @@ footer{
     color: white;
     font-size: 12px;
     text-align: center;
+    padding: 3% 0 5% 0;
 }
 
 /* .caja-1{
