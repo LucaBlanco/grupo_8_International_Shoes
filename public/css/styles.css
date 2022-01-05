@@ -145,8 +145,21 @@ input{
     margin: 0 30px 5px 30px;
     padding: 20px 20px 20px 20px;
 }
-.cantidad-container, .total-container{
+.grid-cont {
     display: grid;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+.fa-trash-alt{
+    margin-top: 30px;
+    margin-left: 12px;
+}
+
+@media (min-width: 210px) {    
+    .item{
+        flex-wrap: wrap;
+    }
 }
 
 /*REGISTRO */
