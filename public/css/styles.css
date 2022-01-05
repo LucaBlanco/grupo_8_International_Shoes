@@ -7,6 +7,7 @@ header{
     background-color: black;
 }
 body{
+    height: 100%;
     font-family: 'Barlow', sans-serif;
     background-color: whitesmoke;
 }
@@ -121,12 +122,69 @@ input{
     text-align: center;
 }
 
+footer{
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* .caja-1{
+    margin: 10px;
+} */
+
+.caja-4-2 ul{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    
+}
+
+.caja-4-1 ul li{
+    margin: 5px;
+    
+}
+
+.caja-2 ul li{
+    margin: 5px; 
+}
+
+footer ul li{
+    list-style-type: none;
+  
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #FFF;
+    
+}
+
+/* ICONOS ESTILOS */
+div article {
+    margin: 5px 10px;
+}
+article i{
+    font-size: 20px;
+    border-radius: 5px; 
+    border: 2px outset #D4D4D4;
+    padding: 5px;
+}
+article {
+  display:inline-block ;
+  justify-content: center;
+  
+  }
+
+  .medios-de-pago-logos i{
+      font-size: 50px;
+  }
 
 
 /*Carrito*/
 .carrito{
     width: 100%;
-    height: 550px;
+    min-height: 100%;
     background-color: white;
     padding-top: 30px;
 }
@@ -137,16 +195,66 @@ input{
     width: 65px;
     height: 33px;
 }
+.cantidad{
+    height: 37px;
+}
 
 .item{
     background-color: #F2F2F2;
+    max-width: 660px;
     display: flex;
     justify-content: space-evenly;
     margin: 0 30px 5px 30px;
     padding: 20px 20px 20px 20px;
 }
-.cantidad-container, .total-container{
+.grid-cont {
     display: grid;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+.fa-trash-alt{
+    margin-top: 30px;
+    margin-left: 12px;
+}
+.btn-subm-compra{
+    background-color: #F7F7F7;
+    border: 2px solid #DCDCDC;
+    border-radius: 22px;
+    width: 214px;
+    height: 44px;
+}
+
+.finalizar-compra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.compra-form{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.finalizar-compra > form > input{
+    background-color: #FFFFFF;
+    border: 2px solid #C8C8C8;
+    border-radius: 3px;
+    width: 214px;
+    height: 29px;
+    margin: 7px 0 7px 0;
+    text-align: left;
+    padding-left: 6px;
+}
+
+@media (min-width: 210px) {    
+    .item{
+        flex-wrap: wrap;
+    }
 }
 
 /*REGISTRO */
