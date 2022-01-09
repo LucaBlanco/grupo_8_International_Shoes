@@ -187,6 +187,16 @@ article {
     min-height: 100%;
     background-color: white;
     padding-top: 30px;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.items {
+    display: grid;
 }
 
 .cantidad, .total{
@@ -212,6 +222,7 @@ article {
     line-height: 30px;
     text-align: center;
     vertical-align: middle;
+    margin: 0 5px;
 }
 .fa-trash-alt{
     margin-top: 30px;
