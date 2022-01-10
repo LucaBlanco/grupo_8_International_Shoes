@@ -1,0 +1,275 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+section.banner img{
+    width: 100%;
+    
+}
+
+
+
+/* acomodar imagenes de productos */
+article.img{
+    margin: 5px;
+     
+}
+
+img{
+    padding-bottom: 15px;
+}
+
+div.productos article{
+    padding-top: 10px;
+}
+main section article img{
+    width: 90%;
+}
+/* configuracion del main  */
+main{
+    background-color: #ebebeb;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    /* margin: 10px 0px;  */
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+main section article{
+    background-color: #fff;
+    margin: 10px 0px; 
+}
+
+.precio{
+    font-size: 15px;
+    text-align: center;
+    border-style: ridge
+}
+/* CORRECCION:Aparecer y desaparecer  EL PRECIO */
+.precio{
+    opacity: 0%;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
+
+.precio:hover{
+    opacity: 100%;
+}
+.precio{
+    width: 30%;
+}
+
+.descripcion{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+
+/* color del avion */
+main section i{
+    color: red;
+}
+
+/* caja de logo envio, precio y descripccion tengan un borde, lineas */
+article div.articulo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #c46666;
+    padding: 15px;
+    justify-content: space-around;
+}
+
+div.ofertas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Enmarcar en circulo al avión y centrar */
+
+main section article i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ce2f2a;
+    background-color: #fff;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+i.fas.fa-plane{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:-15px;
+    right: 25px;
+    transition: all 600ms;
+}
+
+main section article div i.fas.fa-plane:hover{
+    transform: rotateZ(-45deg);
+}
+
+.descripcion{
+   /* display: none;(en la parte mobile no aparece la descripcion del producto) NO FUNCIONA ASI PARA QUE DESAPAREZCA*/
+    margin-top: 20px;
+    
+} 
+
+
+h3{
+    font-size:24px ;
+}
+
+.banner-off{
+    padding-top: 15px
+}
+
+.banner-off figure img{
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.banner-off figure img:hover{
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+/* CARRUSEL */
+/* section .container{box-sizing:content-box; */
+ 
+.container{
+  display: contents;
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.slider{
+  position: relative;
+  width: 800px;
+  height: 300px;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+   /*  width: inherit; */
+    height: inherit;
+    transition: opacity .5s;
+    background:#fff;
+}
+
+ul.slider li img{
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
+  object-fit:contain;
+}
+
+ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+div .container {
+    box-sizing: content-box;
+}
+
+.menu{
+  text-align: center;
+  margin: 20px;
+ 
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  /* width: 45px;
+  height: 20px; */
+  font-size: 16px;
+  border-radius: 10%;
+}
+
+li#slide1, li#slide2{
+    width: 290px;
+}
+
+/* MEDIA QUERIES */
+
+/* Navegacion Tablet */
+
+
+@media (min-width: 361px){
+    /* main section article .descripcion{
+       display: block; 
+    } */
+
+       main section article{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    
+   
+    main section div.productos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    main section div.productos article{
+        width: 45%;
+    }
+
+    .precio{
+        width: 50%;
+        font-size: 16px;
+        text-align: start;
+    }
+
+
+}
+/* Navegacion Desktop */
+
+@media (min-width: 769px){
+    main section div.productos article{
+        width: 24%;
+
+    }
+
+}
