@@ -181,6 +181,9 @@ article {
       font-size: 50px;
   }
 
+  @media (min-width:425px){
+    
+  }
 
 /*Carrito*/
 .carrito{
