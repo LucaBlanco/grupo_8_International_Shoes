@@ -13,7 +13,7 @@ body{
 }
 
 div.top-header{
-    padding: 5%;
+    padding:  20px;
     font-size: 12px;
     text-align: center;
 }
@@ -30,8 +30,7 @@ p.nombre{
 header img{
     display:block;
     margin:auto;
-    width: 30%;
-        
+    width: 15%;        
 }
 header nav{
     font-size: 12px;
@@ -187,15 +186,14 @@ article {
     width: 100%;
     min-height: 100%;
     background-color: white;
-    padding-top: 30px;
-    
+    padding: 30px;    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
-    
+    align-items: flex-start;    
 }
+
 .items {
     display: grid;
 }
@@ -235,12 +233,13 @@ article {
     border-radius: 22px;
     width: 214px;
     height: 44px;
+    margin-top: 7px;
 }
 
 .finalizar-compra{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 300px;
 }
 
