@@ -106,7 +106,7 @@ main{
     background-color: lightgray;
     align-items: center;
     text-align: center;
-    padding: 2% 0px 5% 0px;
+    /* padding: 2% 0px 5% 0px; */
 }
 .login{
     width: 170px;
