@@ -1,5 +1,20 @@
 {
+  "name": "international_shoes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "clear && nodemon app.js -e mjs,js,json,ejs,css",
+    "start": "node app.js"
+  },
+  "author": "Grupo 8",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.2"
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "method-override": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
