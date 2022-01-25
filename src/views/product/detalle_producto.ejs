@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+    <body>
+        <%- include("../partials/nav") %>
+    <div class="detalleProducto">
+        <div class="imagenProducto">
+            <img src="https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_1110/cms/2VylWd72lGoKsvQwAuYDoo/c09e2fb9facacab72f358fe26e729bd4/AA0001M_SHOE_LEFT_GLOBAL_MENS_WOOL_MIZZLE_DASHER_LYRA_LIGHTGRAY.png" alt="">
+        </div>
+
+        <div class="detalle">
+            <h2>NOMBRE DEL PRODUCTO</h2>
+            <div class="descripcion">
+                <h2>DESCRIPCIÓN</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore magni dolorum optio quis veritatis itaque nostrum fuga nemo sint similique. Deleniti harum distinctio, asperiores recusandae nobis error! Voluptatum, odit dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi esse libero dolorum ducimus ea. Illo voluptatibus omnis, saepe asperiores reiciendis doloribus aspernatur! Placeat rerum ex veritatis optio magni dolorum aliquid?</p>
+            </div>
+        
+            <label for="">Total {{ precio }}</label>
+            <div class="talles">
+                <label for="talles">Talle {{ talle }}</label>
+            </div>
+            <div>
+                <select name="talles" id="talles" class="talless">
+                    <option value>Elegí una opción...</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="49">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                </select>
+            </div>
+            <nav>
+                <a href="/carrito"><button type="submit" class="botonCompra">AGREGAR AL CARRITO <i class="fas fa-shopping-cart"></i></button></a>
+            </nav>
+        </div>
+
+    </div>
+    <%- include("../partials/footer") %>
+</body>
