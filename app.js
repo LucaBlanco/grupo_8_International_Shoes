@@ -12,8 +12,8 @@ app.set('views', path.resolve(__dirname, './views'));
 app.listen(5000, ()=> {console.log('Servidor corriendo en el puerto 5000')});
 
 app.get('/',(req, res)=>{
-    let rutaIndex= path.resolve('./views/home.html');
-    res.sendFile(rutaIndex);
+    let rutaIndex= path.resolve('./src/views/home');
+    res.render(rutaIndex);
 })
 
 app.get('/login',(req, res)=>{

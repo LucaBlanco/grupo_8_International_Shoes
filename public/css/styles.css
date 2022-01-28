@@ -9,7 +9,8 @@ header{
 body{
     height: 100%;
     font-family: 'Barlow', sans-serif;
-    background-color: whitesmoke;
+    background: linear-gradient(to right, #000000,#700600,#B00900,#B01244,#D60B00, #FFF);
+  /*   background-color: whitesmoke; */
 }
 
 div.top-header{
@@ -20,17 +21,17 @@ div.top-header{
 
 p.nombre{
     color: white;
-    font-size: 20px;
-    font-style: italic;
+    font-size: 30px;
+    font-family: 'Bebas Neue',cursive;
     text-align: justify;
-    padding-bottom: 15px;
-    font-weight: bolder;
+    /* padding-bottom: 15px;
+    font-weight: bolder; */
 }
 
-header img{
+header section img{
     display:block;
     margin:auto;
-    width: 15%;        
+    width: 25%;        
 }
 header nav{
     font-size: 12px;
@@ -43,7 +44,9 @@ header ul li{
 header ul li a{
     text-decoration: none;
     color: whitesmoke;
+    font-weight: 900;
     }
+    
 header ul li{
     text-align: center;
 }
@@ -87,7 +90,7 @@ margin-left: 15%;
 
 header div.top-header p{
     text-align: center;
-    margin-top: 10px;
+   /*  margin-top: 10px; */
 }
 
 .encabezado{
@@ -102,7 +105,7 @@ header {
 }
 
 main{
-    background-color: lightgray;
+    background-color:linear-gradient(to right, #000000,#D95607, #D91907,#F80738,#ffff);
     align-items: center;
     text-align: center;
 }

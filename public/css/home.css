@@ -29,7 +29,7 @@ main section article img{
 }
 /* configuracion del main  */
 main{
-    background-color: #ebebeb;
+    background-color: linear-gradient(to right, #000000,#D95607, #D91907,#F80738,#ffff);
     font-family: 'Barlow', sans-serif;
     font-size: 12px;
     /* margin: 10px 0px;  */
@@ -48,7 +48,10 @@ main section article{
 .precio{
     font-size: 15px;
     text-align: center;
-    border-style: ridge
+    font-weight: 900;
+    text-align: center;
+    border-style: outset;
+    border-color: papayawhip;
 }
 /* CORRECCION:Aparecer y desaparecer  EL PRECIO */
 .precio{
@@ -129,7 +132,11 @@ main section article div i.fas.fa-plane:hover{
 
 
 h3{
-    font-size:24px ;
+    font-size: 22px;
+    font-family: fantasy;
+    font-weight: lighter;
+    /* font-family: 'Syne Mono', monospace; */
+    color: snow;
 }
 
 .banner-off{
@@ -262,7 +269,7 @@ ul.slider li:target {
     .precio{
         width: 50%;
         font-size: 16px;
-        text-align: start;
+        text-align: center;
     }
 /* media queries carrusel */
 
@@ -279,5 +286,11 @@ li#slide1, li#slide2, li#slide3{
         width: 24%;
 
     }
+    div.top-header {
+        padding:2% 10% 1% 10%;
+        font-size: 12px;
+        text-align: center;
+    }
+     
 
 }
