@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
+    <%- include("../partials/head") %>
+    <body>
+        <%- include("../partials/nav") %>
     <div class="detalleProducto">
         <div class="imagenProducto">
             <img src="https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_1110/cms/2VylWd72lGoKsvQwAuYDoo/c09e2fb9facacab72f358fe26e729bd4/AA0001M_SHOE_LEFT_GLOBAL_MENS_WOOL_MIZZLE_DASHER_LYRA_LIGHTGRAY.png" alt="">
@@ -19,9 +10,14 @@
 
         <div class="detalle">
             <h2>NOMBRE DEL PRODUCTO</h2>
-            <label for="">Total</label>
+            <div class="descripcion">
+                <h2>DESCRIPCIÓN</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore magni dolorum optio quis veritatis itaque nostrum fuga nemo sint similique. Deleniti harum distinctio, asperiores recusandae nobis error! Voluptatum, odit dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi esse libero dolorum ducimus ea. Illo voluptatibus omnis, saepe asperiores reiciendis doloribus aspernatur! Placeat rerum ex veritatis optio magni dolorum aliquid?</p>
+            </div>
+        
+            <label for="">Total {{ precio }}</label>
             <div class="talles">
-                <label for="talles">Talle</label>
+                <label for="talles">Talle {{ talle }}</label>
             </div>
             <div>
                 <select name="talles" id="talles" class="talless">
@@ -42,10 +38,5 @@
         </div>
 
     </div>
-
-    <div class="descripcion">
-        <h2>DESCRIPCIÓN</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore magni dolorum optio quis veritatis itaque nostrum fuga nemo sint similique. Deleniti harum distinctio, asperiores recusandae nobis error! Voluptatum, odit dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi esse libero dolorum ducimus ea. Illo voluptatibus omnis, saepe asperiores reiciendis doloribus aspernatur! Placeat rerum ex veritatis optio magni dolorum aliquid?</p>
-    </div>
-
-</body>  
+    <%- include("../partials/footer") %>
+</body>

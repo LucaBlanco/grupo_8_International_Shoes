@@ -29,7 +29,7 @@ main section article img{
 }
 /* configuracion del main  */
 main{
-    background-color: #ebebeb;
+    background-color: linear-gradient(to right, #000000,#D95607, #D91907,#F80738,#ffff);
     font-family: 'Barlow', sans-serif;
     font-size: 12px;
     /* margin: 10px 0px;  */
@@ -48,7 +48,10 @@ main section article{
 .precio{
     font-size: 15px;
     text-align: center;
-    border-style: ridge
+    font-weight: 900;
+    text-align: center;
+    border-style: outset;
+    border-color: papayawhip;
 }
 /* CORRECCION:Aparecer y desaparecer  EL PRECIO */
 .precio{
@@ -129,7 +132,11 @@ main section article div i.fas.fa-plane:hover{
 
 
 h3{
-    font-size:24px ;
+    font-size: 22px;
+    font-family: fantasy;
+    font-weight: lighter;
+    /* font-family: 'Syne Mono', monospace; */
+    color: snow;
 }
 
 .banner-off{
@@ -166,10 +173,11 @@ ul, li {
     list-style: none;
 }
 
-ul.slider{
+ul.slider{/* ACÁ adapto para distintas mediaqueries el carrusel */
   position: relative;
-  width: 800px;
-  height: 300px;
+  width: 100%;
+  height: 50vh; /* si pongo 100% desaparece las imagenes del carrusel */
+  overflow: hidden;
 }
 
 ul.slider li {
@@ -183,13 +191,18 @@ ul.slider li {
     background:#fff;
 }
 
-ul.slider li img{
+ul.slider li img{/* ACÁ adapto para distintas mediaqueries el carrusel */
   box-sizing: border-box;
   width: 90%;
   height: 100%;
-  object-fit:contain;
+  object-fit:scale-down;
 }
 
+/* version mobile */
+
+li#slide3{
+    width: 100%;
+}
 ul.slider li:first-child {
     opacity: 1; /*Mostramos el primer <li>*/
 }
@@ -198,7 +211,7 @@ ul.slider li:target {
     opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
 }
 
-div .container {
+.container {
     box-sizing: content-box;
 }
 
@@ -225,9 +238,6 @@ div .container {
   border-radius: 10%;
 }
 
-li#slide1, li#slide2{
-    width: 290px;
-}
 
 /* MEDIA QUERIES */
 
@@ -259,9 +269,14 @@ li#slide1, li#slide2{
     .precio{
         width: 50%;
         font-size: 16px;
-        text-align: start;
+        text-align: center;
     }
+/* media queries carrusel */
 
+li#slide1, li#slide2, li#slide3{
+    width: 100%;
+   
+}
 
 }
 /* Navegacion Desktop */
@@ -271,5 +286,11 @@ li#slide1, li#slide2{
         width: 24%;
 
     }
+    div.top-header {
+        padding:2% 10% 1% 10%;
+        font-size: 12px;
+        text-align: center;
+    }
+     
 
 }

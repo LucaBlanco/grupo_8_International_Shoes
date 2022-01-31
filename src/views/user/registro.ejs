@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include("../partials/head") %>
+    
+<body>
+
+   <%- include("../partials/nav") %>
+
+    <main class="register">
+        <form action="/" method="POST">
+            <input class="registro" type="text" name="name" placeholder="NOMBRES">
+            <input  class="registro" type="text" name="lastname" placeholder="APELLIDOS">
+            <input class="registro"  type="text" name="user" placeholder="NOMBRE DE USUARIO">
+            <input  class="registro" type="email" name="email" placeholder="E-MAIL">
+            <input class="registro"  type="email" name="email" placeholder="REPETIR E-MAIL">
+            <br>
+            <label for="birth_date"><b>FECHA DE NACIMIENTO</b></label>
+            <br>
+            <input  class="registro" type="date" name="birth_date" id="birth_date">
+            <br>
+            <input  class="registro" type="text" name="country" placeholder="PAIS">
+            <input  class="registro" type="text" name="province" placeholder="PROVINCIA">
+            <input  class="registro" type="text" name="city" placeholder="CIUDAD">
+            <input  class="registro" type="text" name="addres" placeholder="DOMICILIO">
+                     
+            <h4>ELEGÍ TU FOTO DE PERFIL</h4>
+            <input class="registro"  type="file" name="avatar">
+            <br>
+            <br>
+            <input  class="registro" type="password" name="pass" placeholder="Elegí tu contraseña">
+            <input  class="registro" type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+            <br>
+            <br>
+            <input class="boton"  type="submit" value="Enviar">
+            <input class="boton"  type="reset" value="Borrar">
+    </main>    
+    <%- include("../partials/footer") %>
+</body>  
