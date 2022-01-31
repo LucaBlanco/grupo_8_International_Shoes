@@ -9,7 +9,8 @@ app.use( express.static(publicPath) );
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './views'));
 
-app.listen(5000, ()=> {console.log('Servidor corriendo en el puerto 5000')});
+app.set('port', process.env.PORT || 3030);
+app.listen(app.get('port', () => console.log('listening on port http://localhost:3030'+ app.get('port'))));
 
 app.get('/',(req, res)=>{
     let rutaIndex= path.resolve('./src/views/home');
