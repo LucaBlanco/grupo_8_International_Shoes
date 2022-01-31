@@ -9,7 +9,7 @@ app.use( express.static(publicPath) );
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './views'));
 
-app.listen('port', process.env.PORT || 3030, function() {
+app.listen(process.env.PORT || 3030, function() {
     console.log('servidor corriendo en puerdo 3030');
 })
 
