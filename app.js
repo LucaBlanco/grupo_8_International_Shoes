@@ -17,12 +17,12 @@ app.get('/',(req, res)=>{
 })
 
 app.get('/login',(req, res)=>{
-    let rutaIndex= path.resolve('./views/login.html');
-    res.sendFile(rutaIndex);
+    let rutaIndex= path.resolve('./src/views/user/login');
+    res.render(rutaIndex);
 })
 app.get('/registro',(req, res)=>{
-    let rutaIndex= path.resolve('./views/registro.html');
-    res.sendFile(rutaIndex);
+    let rutaIndex= path.resolve('./src/views/user/registro');
+    res.render(rutaIndex);
 })
 
 app.get('/carrito',(req, res)=>{
