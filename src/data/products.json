@@ -481,5 +481,32 @@
     ],
     "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg",
     "files": null
+  },
+  {
+    "id": 23,
+    "marca": "Adidas",
+    "nombre": "zapatilla test",
+    "descripcion": "asd",
+    "precio": 3,
+    "stock": 15,
+    "imagen": "WhatsApp Image 2021-12-15 at 10.34.37 AM.jpeg",
+    "files": null
+  },
+  {
+    "id": 24,
+    "marca": "Louis Vuitton",
+    "nombre": "",
+    "descripcion": "",
+    "precio": 0,
+    "stock": 1,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "imagen": "",
+    "files": null
   }
 ]
