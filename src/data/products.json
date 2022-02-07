@@ -1,63 +1,485 @@
-[{"id":1,
-"nombre":"Nike All blue and white",
-"Marca":"Nike",
-"descripcion":"varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non",
-"precio":273,
-"stock":24,
-"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}},
-
-{"id":2,
-"nombre":"Adidas Black and white",
-"Marca":"Adidas",
-"descripcion":"interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio",
-"precio":495,
-"stock":14,
-"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}},
-
-{"id":3,
-"nombre":"Nike Jordan Purple",
-"Marca":"Nike",
-"descripcion":"rutrum ac lobortis vel dapibus at diam nam tristique tortor eu pede",
-"precio":457,
-"stock":28,
-"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}},
-
-{"id":4,
-"nombre":"Adidas Red Line",
-"Marca":"Adidas",
-"descripcion":"tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus",
-"precio":415,
-"stock":15,
-"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}},
-
-{"id":5,"nombre":"Nike All black",
-"Marca":"Nike",
-"descripcion":"turpis elementum ligula vehicula consequat morbi a ipsum integer a",
-"precio":298,
-"stock":30,
-"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}},
-
-{"id":6,
-"nombre":"Sneakers Louis Vuitton",
-"Marca":"Louis Vuitton",
-"descripcion":"justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices",
-"precio":290,
-"stock":46,
-"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}},
-
-{"id":7,
-"nombre":"Nike Air Jordan Blue",
-"Marca":"Nike",
-"descripcion":"auctor gravida sem praesent id massa id nisl venenatis lacinia",
-"precio":417,
-"stock":28,"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}},
-
-{"id":8,
-"nombre":"Adidas running all purple",
-"Marca":"Adidas",
-"descripcion":"dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros",
-"precio":444,
-"stock":16,
-"talle":{"S":["38"],"M":["39"],"L":["40"],"XL":["41"],"XXL":["42"]}
-}
+[
+  {
+    "id": 1,
+    "nombre": "Nike All blue and white",
+    "marca": "Nike",
+    "descripcion": "varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non",
+    "precio": 273,
+    "stock": 24,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "nombre": "Adidas Black and white",
+    "marca": "Adidas",
+    "descripcion": "interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio",
+    "precio": 495,
+    "stock": 14,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "nombre": "Nike Jordan Purple",
+    "marca": "Nike",
+    "descripcion": "rutrum ac lobortis vel dapibus at diam nam tristique tortor eu pede",
+    "precio": 457,
+    "stock": 28,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "nombre": "Adidas Red Line",
+    "marca": "Adidas",
+    "descripcion": "tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus",
+    "precio": 415,
+    "stock": 15,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "nombre": "Nike All black",
+    "marca": "Nike",
+    "descripcion": "turpis elementum ligula vehicula consequat morbi a ipsum integer a",
+    "precio": 298,
+    "stock": 30,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "nombre": "Sneakers Louis Vuitton",
+    "marca": "Louis Vuitton",
+    "descripcion": "justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices",
+    "precio": 290,
+    "stock": 46,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "nombre": "Nike Air Jordan Blue",
+    "marca": "Nike",
+    "descripcion": "auctor gravida sem praesent id massa id nisl venenatis lacinia",
+    "precio": 417,
+    "stock": 28,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "nombre": "Adidas running all purple",
+    "marca": "Adidas",
+    "descripcion": "dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros",
+    "precio": 444,
+    "stock": 16,
+    "talle": {
+      "S": [
+        "38"
+      ],
+      "M": [
+        "39"
+      ],
+      "L": [
+        "40"
+      ],
+      "XL": [
+        "41"
+      ],
+      "XXL": [
+        "42"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "marca": "black",
+    "nombre": "Jaunfsd",
+    "descripcion": "adasd",
+    "precio": 34,
+    "stock": 8,
+    "talle": [
+      "'M':['39']",
+      "'L':['40']",
+      "'XL':['41']"
+    ],
+    "files": null
+  },
+  {
+    "id": 10,
+    "marca": "black",
+    "nombre": "zapatilla test",
+    "descripcion": "adasd",
+    "precio": 34,
+    "stock": 8,
+    "talle": [
+      "'M':['39']",
+      "'L':['40']",
+      "'XL':['41']"
+    ],
+    "files": null
+  },
+  {
+    "id": 11,
+    "marca": "black",
+    "nombre": "zapatilla testadasd",
+    "descripcion": "sadasdeqwe2434234",
+    "precio": 3242,
+    "stock": 20,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "files": null
+  },
+  {
+    "id": 12,
+    "marca": "black",
+    "nombre": "zapatilla test",
+    "descripcion": "vdolor vel est donec odio justo sollicitudin ut suscipit a feugiat et erosdolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros",
+    "precio": 1536,
+    "stock": 16,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg",
+    "files": null
+  },
+  {
+    "id": 13,
+    "precio": null,
+    "stock": null,
+    "files": null
+  },
+  {
+    "id": 14,
+    "marca": "green",
+    "nombre": "zapatilla test",
+    "descripcion": "ASDASDASDAS",
+    "precio": 4234,
+    "stock": 7,
+    "talle": [
+      "\"S\":[\"38\"]",
+      "\"M\":[\"39\"]",
+      "\"XXL\":[\"42\"]"
+    ],
+    "imagen": "WhatsApp Image 2021-12-23 at 4.22.42 PM.jpeg",
+    "files": null
+  },
+  {
+    "id": 15,
+    "marca": "blue",
+    "nombre": "zapatilla tests",
+    "descripcion": "req.body.tallereq.body.tallereq.body.tallereq.body.tallereq.body.tallereq.body.talle",
+    "precio": 34234,
+    "stock": 14,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": {
+      "marca": "blue",
+      "nombre": "zapatilla tests",
+      "descripcion": "req.body.tallereq.body.tallereq.body.tallereq.body.tallereq.body.tallereq.body.talle",
+      "talle": [
+        "'S':['38']",
+        "'M':['39']",
+        "'L':['40']"
+      ],
+      "precio": "34234",
+      "stock": "14",
+      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
+    },
+    "files": null
+  },
+  {
+    "id": 16,
+    "marca": "yellow",
+    "nombre": "gjghj",
+    "descripcion": "gjhjghj",
+    "precio": 567,
+    "stock": 1,
+    "talle": [
+      "'S':['38']",
+      "'L':['40']"
+    ],
+    "imagen": {
+      "marca": "yellow",
+      "nombre": "gjghj",
+      "descripcion": "gjhjghj",
+      "talle": [
+        "'S':['38']",
+        "'L':['40']"
+      ],
+      "precio": "567",
+      "stock": "1",
+      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
+    },
+    "files": null
+  },
+  {
+    "id": 17,
+    "marca": "yellow",
+    "nombre": "gjghj",
+    "descripcion": "gjhjghj",
+    "precio": 567,
+    "stock": 6,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": {
+      "marca": "yellow",
+      "nombre": "gjghj",
+      "descripcion": "gjhjghj",
+      "talle": [
+        "'S':['38']",
+        "'M':['39']",
+        "'L':['40']"
+      ],
+      "precio": "567",
+      "stock": "6",
+      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
+    },
+    "files": null
+  },
+  {
+    "id": 18,
+    "marca": "yellow",
+    "nombre": "gjghj",
+    "descripcion": "gjhjghj",
+    "precio": 567,
+    "stock": 6,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": {
+      "marca": "yellow",
+      "nombre": "gjghj",
+      "descripcion": "gjhjghj",
+      "talle": [
+        "'S':['38']",
+        "'M':['39']",
+        "'L':['40']"
+      ],
+      "precio": "567",
+      "stock": "6",
+      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
+    },
+    "files": null
+  },
+  {
+    "id": 19,
+    "marca": "yellow",
+    "nombre": "gjghj",
+    "descripcion": "gjhjghj",
+    "precio": 567,
+    "stock": 6,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": {
+      "marca": "yellow",
+      "nombre": "gjghj",
+      "descripcion": "gjhjghj",
+      "talle": [
+        "'S':['38']",
+        "'M':['39']",
+        "'L':['40']"
+      ],
+      "precio": "567",
+      "stock": "6",
+      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
+    },
+    "files": null
+  },
+  {
+    "id": 20,
+    "marca": "yellow",
+    "nombre": "gjghj",
+    "descripcion": "gjhjghj",
+    "precio": 567,
+    "stock": 6,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": {
+      "marca": "yellow",
+      "nombre": "gjghj",
+      "descripcion": "gjhjghj",
+      "talle": [
+        "'S':['38']",
+        "'M':['39']",
+        "'L':['40']"
+      ],
+      "precio": "567",
+      "stock": "6",
+      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
+    },
+    "files": null
+  },
+  {
+    "id": 21,
+    "marca": "yellow",
+    "nombre": "gjghj",
+    "descripcion": "gjhjghj",
+    "precio": 567,
+    "stock": 6,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": {
+      "marca": "yellow",
+      "nombre": "gjghj",
+      "descripcion": "gjhjghj",
+      "talle": [
+        "'S':['38']",
+        "'M':['39']",
+        "'L':['40']"
+      ],
+      "precio": "567",
+      "stock": "6",
+      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
+    },
+    "files": null
+  },
+  {
+    "id": 22,
+    "marca": "yellow",
+    "nombre": "gjghj",
+    "descripcion": "gjhjghj",
+    "precio": 567,
+    "stock": 6,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg",
+    "files": null
+  }
 ]

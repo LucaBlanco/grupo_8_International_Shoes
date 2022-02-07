@@ -4,27 +4,52 @@
 <body>
     <%- include("../partials/nav") %>
     <h1>Crear un producto</h1>
+<!--- enctype="multipart/form-data"-->
+    <form action="/productos/guardar"  method="POST">
+        <fieldset>
+            <label for="marca">Marca</label>
+            <select name="marca" id="marca">
+                <option value="Louis Vuitton">Louis Vuitton</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Nike">Nike</option>
+                <option value="Acme">Acme</option>
+                <option value="Patoruzito">Patoruzito</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label for="nombre">Nombre/Modelo</label>
+                <input type="text" name="nombre" id="nombre">
+        </fieldset>
+        <fieldset>
+            <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="" cols="30" rows="10" id="descripcion"></textarea>
+        </fieldset>
 
-    <form action="/productos/guardar" enctype="multipart/form-data" method="post">
         <fieldset>
-            <label for="name">Nombre</label>
-                <input type="text" name="name" id="name">
+            <label for="talle">Talles disponibles</label>
+                <input type="checkbox" id="talle" name="talle" value="'S':['38']">
+                <label for="talle">S</label>
+                <input type="checkbox" id="talle" name="talle" value="'M':['39']">
+                <label for="talle">M</label>
+                <input type="checkbox" id="talle" name="talle" value="'L':['40']">
+                <label for="talle">L</label>
+                <input type="checkbox" id="talle" name="talle" value="'XL':['41']">
+                <label for="talle">XL</label>
+                <input type="checkbox" id="talle" name="talle" value="'XXL':['42']">
+                <label for="talle">XXL</label>
         </fieldset>
+
         <fieldset>
-            <label for="descripcion">Descripcion</label>
-                <textarea name="description" id="" cols="30" rows="10" id="descripcion"></textarea>
-        </fieldset>
-        <fieldset>
-            <label for="price">Precio</label>
-                <input type="number" name="price" id="price">
+            <label for="precio">Precio</label>
+                <input type="number" name="precio" id="precio">
         </fieldset>
         <fieldset><label for="stock">Stock</label>
             <input type="range" name="stock" id="stock" min="1" max="20" step="1" value="0"
                 oninput="document.getElementById('tStock').innerHTML = this.value" />
             <label id="tStock"></label>
         </fieldset>
-        <fieldset><label for="product">Imagen</label>
-            <input type="file" name="product" id="product" >
+        <fieldset><label for="imagen">Imagen</label>
+            <input type="file" name="imagen" id="imagen" >
         </fieldset>
         <fieldset>
             <button type="submit">Guardar</button>

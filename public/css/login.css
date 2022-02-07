@@ -10,8 +10,8 @@ body{
     padding: 0;
     background: linear-gradient(to right, #000000,#700600,#B00900,#B01244,#D60B00, #FFF);
     height: 100vh;
-    overflow: hidden;
-  /*   background-color: whitesmoke; */
+  /*  overflow: hidden; */
+  /*  background-color: whitesmoke; */
 }
 
 .center{

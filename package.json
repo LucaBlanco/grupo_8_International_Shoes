@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "clear && nodemon app.js -e mjs,js,json,ejs,css",
+    "test": "clear && nodemon src/app.js -e mjs,js,json,ejs,css",
     "start": "node app.js"
   },
   "author": "Grupo 8",
