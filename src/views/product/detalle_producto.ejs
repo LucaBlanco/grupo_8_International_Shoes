@@ -9,10 +9,10 @@
         </div>
 
         <div class="detalle">
-            <h2><%- producto.nombre %></h2>
+            <h2><%= producto.nombre %></h2>
             <div class="descripcion">
                 <h2>DESCRIPCIÓN</h2>
-                <p><%- producto.descripcion %></p>
+                <p><%= producto.descripcion %></p>
             </div>
         
             <label for="">Total {{ precio }}</label>
@@ -20,7 +20,7 @@
                 <label for="talles">Talle {{ talle }}</label>
             </div>
             <div>
-                <select name="talles" id="talles" class="talless">
+                <select name="talles" id="talles" class="talles">
                     <option value>Elegí una opción...</option>
                     <option value="37">37</option>
                     <option value="38">38</option>

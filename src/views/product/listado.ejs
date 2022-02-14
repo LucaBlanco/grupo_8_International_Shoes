@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head")  %> 
+</head>
+<body>
+    <h1>List of Products</h1>
+
+    <%- include("../partials/nav")  %> 
+
+    <% if (productos.length>0) { %>
+        <ul>
+    <% productos.forEach(producto => { %>
+     <li><a href="/productos/<%=producto.id%>"> <%= producto.nombre%> </a></li>
+    <% }) %>
+</ul>
+    <% } else { %>
+        <h2>No se encontro ningun producto</h2>
+     <% } %>      
+     <%- include("./partials/footer") %> 
+</body>
+</html>

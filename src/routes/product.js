@@ -4,9 +4,11 @@ const {index, show, nuevo, storage, update, modify, trash} = require('../control
 
 
 
-//router.get('/:id', show)
+
 router.get('/nuevo', nuevo)
 router.post('/guardar', storage)
+
+/* router.get('/:id', show) */
 /*
 const multer = require('multer');
 const folder = require('../middlewares/storage');

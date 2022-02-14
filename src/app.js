@@ -18,6 +18,8 @@ app.listen(process.env.PORT || 3030, function() {
 })
 
 app.use(require('./routes/main'))
+app.use('/productos', require('./routes/main'))
+
 app.use('/productos', require('./routes/product'))
 
 app.get('/login',(req, res)=>{
