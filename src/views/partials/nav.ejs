@@ -8,19 +8,25 @@
                 <li><a href="#">ENVIOS</a></li>
                 <li><a href="#">AYUDA</a></li>
                 <li><a href="#">CONTACTO</a></li>
-                <li><a href="/registro">Registrate <i class="fas fa-user-alt"></i></a></li>
-                <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-                <li><a href="/carrito">Carrito <i class="fas fa-shopping-cart"></i> </a></li>
+                <li><a href="/users/registro">Registrate <i class="fas fa-user-alt"></i></a></li>
+                <li><a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                <li><a href="/productos/carrito">Carrito <i class="fas fa-shopping-cart"></i> </a></li>
             </div>
-            <li class="search-icon">
-                <input type="search" placeholder="Búsqueda">
+            <form action="/productos/" method="get">
+                <input type="text" name="search" id="search" placeholder="Búsqueda">
+                <button type="submit">Buscar <span class="fas fa-search"></span> </button>
+            </form>
+
+            <!--<li class="search-icon">
+                
                 <label class="icon">
-                <span class="fas fa-search"></span>
+                
                 </label>
             </li>
-        </ul>
+        </ul>-->
     </nav>
-    <!-- <div class="top-header">
+  
+   <!--  <div class="top-header">
         <section>
             <img src="imagenes/Logo-IS-transp.svg" alt="">
         </section>

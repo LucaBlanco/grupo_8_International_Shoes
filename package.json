@@ -1,7 +1,7 @@
 {
   "name": "international_shoes",
   "version": "1.0.0",
-  "description": "",
+  "description": "DESCRIPCION DEL SITIO:\r El sitio se enfoca en la venta de zapatillas de marcas y estilos que no se encuentran normalmente en tiendas de nuestro país. \r La página ofrece un amplio stock de zapatillas importadas de todas las marcas y estilos, y a su vez, tiene la posibilidad de dar al usuario y comprador el poder conseguir la zapatilla que busca haciendonos el pedido de la misma y nosotros gestionando la importación de la misma para que le llegue a su hogar.",
   "main": "src/app.js",
   "scripts": {
     "test": "nodemon src/app.js -e mjs,js,json,ejs,css",
@@ -12,9 +12,19 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.2",
-    "method-override": "^3.0.0"
+    "method-override": "^3.0.0",
+    "multer": "^1.4.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucaBlanco/grupo_8_International_Shoes.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/LucaBlanco/grupo_8_International_Shoes/issues"
+  },
+  "homepage": "https://github.com/LucaBlanco/grupo_8_International_Shoes#readme"
 }

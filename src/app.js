@@ -17,32 +17,33 @@ app.listen(process.env.PORT || 3030, function() {
     console.log('servidor corriendo en puerdo 3030');
 })
 
-app.use(require('./routes/main'))
+app.use(require('./routes/main')) /*Esto si*/
+// app.use('/productos', require('./routes/main')) /*Esto no, en controllers/main no debe haber cosas de productos*/
+
 app.use('/productos', require('./routes/product'))
 
-app.get('/login',(req, res)=>{
-    let rutaIndex = resolve('./src/views/user/login');
-    res.render(rutaIndex);
-})
-app.get('/registro',(req, res)=>{
-    let rutaIndex = resolve('./src/views/user/registro');
-    res.render(rutaIndex);
-})
+app.use('/users', require('./routes/users'))
+
+
+/* pasar todo esto a sus rutas de usuario o producto*/
+
+// app.get('/login',(req, res)=>{
+//     let rutaIndex = resolve('./src/views/user/login');
+//     res.render(rutaIndex);
+// })
+// app.get('/registro',(req, res)=>{
+//     let rutaIndex = resolve('./src/views/user/registro');
+//     res.render(rutaIndex);
+// })
 
 app.get('/carrito',(req, res)=>{
     let rutaIndex = resolve('./src/views/product/carrito');
     res.render(rutaIndex);
 })
-app.get('/producto',(req, res)=>{
-    let rutaIndex = resolve('./src/views/product/detalle_producto');
-    res.render(rutaIndex);
-})
 
-app.get('/crear',(req, res)=>{
-    let rutaIndex = resolve('./src/views/product/crear');
-    res.render(rutaIndex);
-})
-app.get('/editar',(req, res)=>{
-    let rutaIndex = resolve('./src/views/product/editar');
-    res.render(rutaIndex);
-})
+//rutas
+
+app.use(require('./routes/users'));
+
+app.use(require('./routes/users'))
+
