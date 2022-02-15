@@ -18,10 +18,11 @@ app.listen(process.env.PORT || 3030, function() {
 })
 
 app.use(require('./routes/main')) /*Esto si*/
-app.use('/productos', require('./routes/main')) /*Esto no, en controllers/main no debe haber cosas de productos*/
+// app.use('/productos', require('./routes/main')) /*Esto no, en controllers/main no debe haber cosas de productos*/
 
 app.use('/productos', require('./routes/product'))
 
+app.use('/users', require('./routes/users'))
 
 
 /* pasar todo esto a sus rutas de usuario o producto*/
