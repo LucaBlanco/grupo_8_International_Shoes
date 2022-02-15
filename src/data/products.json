@@ -126,28 +126,21 @@
   },
   {
     "id": 6,
-    "nombre": "Sneakers Louis Vuitton",
+    "nombre": "Truchada",
     "marca": "Louis Vuitton",
-    "descripcion": "justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices",
-    "precio": 290,
-    "stock": 46,
-    "talle": {
-      "S": [
-        "38"
-      ],
-      "M": [
-        "39"
-      ],
-      "L": [
-        "40"
-      ],
-      "XL": [
-        "41"
-      ],
-      "XXL": [
-        "42"
-      ]
-    }
+    "descripcion": "justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in badsadasdasdases",
+    "precio": "294",
+    "stock": "16",
+    "talle": [
+      "'M':['39']",
+      "'L':['40']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "name": "Truchada",
+    "price": "294",
+    "description": "justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in badsadasdasdases",
+    "imagen": "190902961_468591997553812_6698620888644924913_n.jpg"
   },
   {
     "id": 7,
@@ -506,6 +499,16 @@
       "'XL':['41']",
       "'XXL':['42']"
     ],
+    "imagen": "",
+    "files": null
+  },
+  {
+    "id": 25,
+    "marca": "Louis Vuitton",
+    "nombre": "",
+    "descripcion": "",
+    "precio": 0,
+    "stock": 1,
     "imagen": "",
     "files": null
   }
