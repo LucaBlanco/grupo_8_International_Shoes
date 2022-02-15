@@ -19,7 +19,7 @@ const controller = {
             title: 'Product', producto: producto
         }): res.render( 'error', {title: 'Error' ,error: 'No se encontro ningún producto'})
     },//show tambien se nombra como details//
-
+    /** los metodos details y seach pasarlos a controller/products */
 }
 
 module.exports = controller
