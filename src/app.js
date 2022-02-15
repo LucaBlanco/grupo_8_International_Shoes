@@ -25,17 +25,24 @@ app.use('/productos', require('./routes/product'))
 
 
 /* pasar todo esto a sus rutas de usuario o producto*/
-app.get('/login',(req, res)=>{
-    let rutaIndex = resolve('./src/views/user/login');
-    res.render(rutaIndex);
-})
-app.get('/registro',(req, res)=>{
-    let rutaIndex = resolve('./src/views/user/registro');
-    res.render(rutaIndex);
-})
+
+// app.get('/login',(req, res)=>{
+//     let rutaIndex = resolve('./src/views/user/login');
+//     res.render(rutaIndex);
+// })
+// app.get('/registro',(req, res)=>{
+//     let rutaIndex = resolve('./src/views/user/registro');
+//     res.render(rutaIndex);
+// })
 
 app.get('/carrito',(req, res)=>{
     let rutaIndex = resolve('./src/views/product/carrito');
     res.render(rutaIndex);
 })
+
+//rutas
+
+app.use(require('./routes/users'));
+
+app.use(require('./routes/users'))
 
