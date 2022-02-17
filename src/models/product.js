@@ -19,8 +19,8 @@ const model = {
         precio: Number(data.precio),
         stock: Number(data.stock),
         talle: data.talle,
-        imagen: data.imagen,
-        files: data.files && data.files.length > 0 ? data.files.map(file => file.filename): null        
+        imagen: data.imagen_name,
+        files: data.files && data.files.length > 0 ? data.files.map(file => file.filename): null,
     }),
     create: data => {
         let lista = model.list().sort((a,b) => a.id < b.id ? -1: a.id > b.id ? 1 : 0);

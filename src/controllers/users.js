@@ -3,9 +3,9 @@ const users = {
 
     // registro: (req, res) => res.sendFile(path.resolve(__dirname,'../views','registro.ejs'))
 
-    login: (req, res) => res.render('login'),
+    login: (req, res) => res.render('user/login'),
 
-    registro: (req, res) => res.render('registro')
+    registro: (req, res) => res.render('user/registro')
 };
 
 

@@ -511,5 +511,148 @@
     "stock": 1,
     "imagen": "",
     "files": null
+  },
+  {
+    "id": 26,
+    "precio": null,
+    "stock": null,
+    "files": null
+  },
+  {
+    "id": 27,
+    "precio": null,
+    "stock": null,
+    "files": null
+  },
+  {
+    "id": 28,
+    "marca": "Patoruzito",
+    "nombre": "Test de multer",
+    "descripcion": "¿COMO COMPRAR?\r\n\r\nSelecciona el modo de entrega:\r\n- Puede retirar en nuestra sucursal.\r\n- O elegir el modo de envios.\r\n\r\n¿R\r\n\r\nMEDIOS DE PAGO\r\n\r\n¿Como podes abonar este articulo ?\r\n- Aceptamos Mercado Pago.\r\n",
+    "precio": 5000,
+    "stock": 13,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "files": null
+  },
+  {
+    "id": 29,
+    "marca": "Acme",
+    "nombre": "Test de multer",
+    "descripcion": "¿COMO COMPRAR?\r\n\r\nSelecciona el modo de entrega:\r\n- Puede retirar en nuestra sucursal.\r\n- O elegir el modo de envios.\r\n\r\n¿R\r\n\r\nMEDIOS DE PAGO\r\n\r\n¿Como podes abonar este articulo ?\r\n- Aceptamos Mercado Pago.\r\n",
+    "precio": 5000,
+    "stock": 5,
+    "talle": [
+      "'S':['38']",
+      "'L':['40']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "files": null
+  },
+  {
+    "id": 30,
+    "marca": "Acme",
+    "nombre": "Test de multer",
+    "descripcion": "¿COMO COMPRAR?\r\n\r\nSelecciona el modo de entrega:\r\n- Puede retirar en nuestra sucursal.\r\n- O elegir el modo de envios.\r\n\r\n¿R\r\n\r\nMEDIOS DE PAGO\r\n\r\n¿Como podes abonar este articulo ?\r\n- Aceptamos Mercado Pago.\r\n",
+    "precio": 5000,
+    "stock": 5,
+    "talle": [
+      "'S':['38']",
+      "'L':['40']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "files": null
+  },
+  {
+    "id": 31,
+    "marca": "Acme",
+    "nombre": "Test de multer",
+    "descripcion": "¿COMO COMPRAR?\r\n\r\nSelecciona el modo de entrega:\r\n- Puede retirar en nuestra sucursal.\r\n- O elegir el modo de envios.\r\n\r\n¿R\r\n\r\nMEDIOS DE PAGO\r\n\r\n¿Como podes abonar este articulo ?\r\n- Aceptamos Mercado Pago.\r\n",
+    "precio": 5000,
+    "stock": 5,
+    "talle": [
+      "'S':['38']",
+      "'L':['40']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "files": null
+  },
+  {
+    "id": 32,
+    "marca": "Adidas",
+    "nombre": "gjghj",
+    "descripcion": "Cuando el implante neuronal que te ha cambiado la vida se vuelve un cacharro obsoleto y peligroso: el lado oscuro del boom de las tecnologías biónicas",
+    "precio": 234,
+    "stock": 10,
+    "talle": [
+      "'S':['38']",
+      "'XXL':['42']"
+    ],
+    "files": null
+  },
+  {
+    "id": 33,
+    "marca": "Adidas",
+    "nombre": "gjghj",
+    "descripcion": "Cuando el implante neuronal que te ha cambiado la vida se vuelve un cacharro obsoleto y peligroso: el lado oscuro del boom de las tecnologías biónicas",
+    "precio": 234,
+    "stock": 10,
+    "talle": [
+      "'S':['38']",
+      "'XXL':['42']"
+    ],
+    "files": null,
+    "test": "273698995_4679597568776243_7773162671633678892_n.jpg"
+  },
+  {
+    "id": 34,
+    "marca": "Adidas",
+    "nombre": "gjghj",
+    "descripcion": "Cuando el implante neuronal que te ha cambiado la vida se vuelve un cacharro obsoleto y peligroso: el lado oscuro del boom de las tecnologías biónicas",
+    "precio": 234,
+    "stock": 10,
+    "talle": [
+      "'S':['38']",
+      "'XXL':['42']"
+    ],
+    "files": null,
+    "test": "273698995_4679597568776243_7773162671633678892_n.jpg"
+  },
+  {
+    "id": 35,
+    "marca": "Nike",
+    "nombre": "Test de multer imagenname",
+    "descripcion": "test de imagenes con igual nombre via javascript del lado del cliente",
+    "precio": 244324,
+    "stock": 8,
+    "talle": [
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": "Captura de pantalla (1).png",
+    "files": null
+  },
+  {
+    "id": 36,
+    "marca": "Acme",
+    "nombre": "Test de multer imagenname",
+    "descripcion": "test de imagenes con igual nombre via javascript del lado del cliente",
+    "precio": 244326,
+    "stock": 13,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']"
+    ],
+    "imagen": "WhatsApp Image 2021-12-23 at 4.22.42 PM.jpeg",
+    "files": null
   }
 ]
