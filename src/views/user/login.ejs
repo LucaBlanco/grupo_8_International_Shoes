@@ -4,27 +4,29 @@
   <%- include("../partials/head") %>
 
 <body>
+  
   <%- include("../partials/nav") %>
-     <!-- EL CARRITO APARECERÁ COMO UN ICONO FIJO EN LA PARTE DE ABAJO A LA DERECHA DE LA PAGINA Y SE TRASLADARÁ CON EL MOVIEMIENTO DE LA PÁGINA -->
   <main>
+    <section id="login">   
     <div class="center">
       <h1>Acceso</h1>
       <form action="/" method="post">
         <div class="texto">
-          <input type="text" name="user" required>
+          <input method="post" type="text" name="user" required>
           <span></span>
           <label>Usuario</label>
         </div>
         <div class="texto">
-          <input type="password" name="pass" required>
+          <input method="post" type="password" name="pass" required>
           <span></span>
           <label>Contraseña</label>
         </div>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" method="get">
         <div class="pas">Olvidé mi contraseña<a href="#"></a></div>
         <div class="link_registro"><a href="/registro">Registrate</a></div>
       </form>
     </div>
+  </section>
   </main>
     
   <%- include("../partials/footer") %>
