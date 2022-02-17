@@ -77,22 +77,3 @@ article {
   }
 
 
-/*REGISTRO */
-
-.registro{
-    display: block;
-    margin: 10px auto;
-    border-radius: 3px;
-    border-color: slategrey;
-    border-style: outset;
-    width: 80%;
-    block-size: 25px;
-
-}
-.boton{
-    width: 50px;
-    block-size: 25px;
-}
-main .register{
-    display: block;
-}
