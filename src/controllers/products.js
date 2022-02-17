@@ -11,7 +11,7 @@ const controller = {
     },
     editar: (req, res) => {
         const {id} = req.params;
-        let producto = id ? match('id', id) : null;
+        let producto = id ? match('id', id) : null; 
         return producto ? res.render('product/editar_producto', {
             title: 'Editando producto '+id,
             producto: producto
@@ -34,6 +34,13 @@ const controller = {
         })
         write(productos)
         return res.redirect('/productos/'+req.body.id);
+    },
+    details:(req,res)=> {
+        const{id}=req.params //se usa params porque viene de la ruta
+        let producto=id ?  match('id',id) : null //si hay un producto con un id que lo busque y si no lo hay es null//
+        return producto ? res.render('product/detalle_producto',{
+            title: 'Product', producto: producto
+        }): res.render( 'error', {title: 'Error' ,error: 'No se encontro ningún producto'})
     }
 }
 

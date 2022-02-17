@@ -9,7 +9,7 @@ const model = {
     write: data => writeFileSync(model.file, model.convert(data)),
     all: () => model.list().filter(p => p.stock > 0),
     filter: (propiedad, valor) => model.all().filter(p => typeof valor !== "string" ? p[propiedad] == valor : p[propiedad].includes(valor)),
-    match:  (propiedad, valor) => model.all().find(p => p[propiedad] == valor),
+    match:  (propiedad, valor) => model.all().find(p => p[propiedad] == valor),  
     generate: data => Object({
         id: model.list().length > 0 ? model.list().pop().id + 1 : 1,
         //model.list().sort((a,b) => a.id < b.id ? -1: a.id > b.id ? 1 : 0)

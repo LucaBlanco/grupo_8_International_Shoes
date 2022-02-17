@@ -12,7 +12,8 @@ const model={
 includes:es un método de strings para saber si una palabra esta incluida o no dentro de otra cadena de texto.
 filter(propiedad,valor): sirve para buscar coincidencias en la lista de productos(basados en su propiedad y valor) que hay en Products.json, y uso filter
 porque quiero que me devuelva un ARRAY (ojo no confuncir con el metodo FIND (Que solo me devuelve un solo valor)) */
-    match: (propiedad,valor)=>model.all().find(producto => producto[propiedad] == valor) //encuentra 1 solo valor//
+    /* match: (propiedad,valor)=>model.all().find(producto => producto[propiedad] == valor) */
+     //encuentra 1 solo valor//
     /*propiedad y valor lo damos desde el controlllers y lo parseamos en el controlador*/ 
 
 }
