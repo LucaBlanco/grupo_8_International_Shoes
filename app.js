@@ -1,4 +1,4 @@
-const express=require("express");
+/**const express=require("express");
 const path=require('path');
 const app= express();
 
@@ -42,3 +42,4 @@ app.get('/editar',(req, res)=>{
     let rutaIndex= path.resolve('./src/views/product/editar');
     res.render(rutaIndex);
 })
+*/

@@ -4,6 +4,8 @@ const controller = {
     storage: (req, res) => {
         req.body.file = req.file;
         const nuevo = generate(req.body);
+        console.log("imagen:" + req.body.file);
+        console.log("file:" + req.file);
         create(nuevo);
         return res.redirect('/productos/'+nuevo.id);
     },
@@ -24,8 +26,8 @@ const controller = {
                 producto.descripcion = req.body.descripcion;
                 producto.stock = req.body.stock;
                 producto.talle = req.body.talle;
-                //producto.files = data.files && data.files.length > 0 ? data.files.map(file => file.filename): null
-                producto.imagen = req.body.imagen;
+                producto.files = data.files && data.files.length > 0 ? data.files.map(file => file.filename): null;
+                producto.imagen = req.body.imagen_name;
                 return producto;
             }
             return producto;
