@@ -19,11 +19,10 @@ body{
 }
 
 .center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
+    box-sizing: border-box;
+    display: flexbox;
+    align-self: center;
+    width: 100%;
     background: white;
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
@@ -31,6 +30,7 @@ body{
 
 .center h1{
     text-align: center;
+    color: #9c9a9a;
     padding: 20px 0;
     border-bottom: 1px solid silver;
 }
@@ -42,7 +42,7 @@ body{
 
 form .texto{
     position: relative;
-    border-bottom: 2px solid #adadad;
+    border-bottom: 2px solid #928f8f;
     margin: 30px 0;
 }
 

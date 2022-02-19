@@ -154,14 +154,12 @@ nav ul li.btn span.show:before{
     }
   }
   .content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
     padding: 0 40px;
-    z-index: -2;
+    z-index: 0;
   }
   .content .text{
     font-size: 40px;

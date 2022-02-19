@@ -5,7 +5,7 @@
     <%- include("../partials/nav") %>
     <h1>Crear un producto</h1>
 <!--- enctype="multipart/form-data"-->
-    <form action="/productos/actualizar?m=PUT"  method="POST">
+    <form action="/productos/actualizar?m=PUT" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="id"  value="<%= producto.id %>">
         <fieldset>
             <label for="marca">Marca</label>
@@ -51,8 +51,10 @@
             <label id="tStock"></label>
         </fieldset>
         <fieldset><label for="imagen">Imagen</label>
-            <input type="file" name="imagen" id="imagen" >
+            <input type="file" name="imagen" id="imagen" 
+            oninput="document.getElementById('imagen_name').value = this.files[0].name" />
         </fieldset>
+        <input type="hidden" name="imagen_name" id="imagen_name" value="" >
         <fieldset>
             <button type="submit">Actualizar producto</button>
         </fieldset>
