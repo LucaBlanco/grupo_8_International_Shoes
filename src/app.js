@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(method("m"))
 
 app.listen(process.env.PORT || 3030, function() {
-    console.log('servidor corriendo en puerdo 3030');
+    console.log('servidor corriendo en puerto 3030');
 })
 
 app.use(require('./routes/main')) /*Esto si*/

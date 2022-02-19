@@ -654,5 +654,105 @@
     ],
     "imagen": "WhatsApp Image 2021-12-23 at 4.22.42 PM.jpeg",
     "files": null
+  },
+  {
+    "id": 37,
+    "marca": "Acme",
+    "nombre": "zapatilla test",
+    "descripcion": "Un 15 de febrero del año 3019 de la Tercera Edad, después de su pelea con el Balrog, Gandalf vuelve a la vida.\r\n\"Allí sobre el Celebdil una ventana solitaria se abre a la nieve y ante ella se extiende un espacio estrecho, un área vertiginosa sobre las nieblas del mundo. El sol brilla fieramente en ese sitio, pero abajo todo está amortajado en nubes. El salió fuera, y cuando llegué detrás, ya estaba ardiendo con nuevos fuegos. ",
+    "precio": 350,
+    "stock": 14,
+    "talle": [
+      "'S':['38']",
+      "'M':['39']",
+      "'L':['40']",
+      "'XL':['41']"
+    ],
+    "imagen": "nike-sb-dunk-low-classic-green-BQ6817-302-release-info-price-3-768x929.webp",
+    "files": null
+  },
+  {
+    "id": 38,
+    "marca": "Patoruzito",
+    "nombre": "zapatilla tests",
+    "descripcion": "asdrf3",
+    "precio": 907,
+    "stock": 13,
+    "talle": [
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "imagen": "",
+    "files": null
+  },
+  {
+    "id": 39,
+    "marca": "Nike",
+    "nombre": "zapatilla tests",
+    "descripcion": "asdrf3",
+    "precio": 929,
+    "stock": 7,
+    "talle": [
+      "'M':['39']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "imagen": "272998240_4302469839853609_2081333764220396428_n.jpg",
+    "files": null
+  },
+  {
+    "id": 40,
+    "marca": "Nike",
+    "nombre": "zapatilla tests",
+    "descripcion": "asdrf3",
+    "precio": 929,
+    "stock": 12,
+    "talle": [
+      "'M':['39']",
+      "'XL':['41']",
+      "'XXL':['42']"
+    ],
+    "imagen": "273698995_4679597568776243_7773162671633678892_n.jpg",
+    "files": null
+  },
+  {
+    "id": 41,
+    "marca": "Louis Vuitton",
+    "nombre": "",
+    "descripcion": "6UN EJEMPLO\r\nPara festejar sus 20 años, la Fundación PUPI, que lidera el ex futbolista y vicepresidente del Inter Javier Zanetti, comenzó una campaña para ayudar a distintas ONG que atraviesan una etapa de crisis desde la emergencia sanitaria.\r\nPor un dólar, los participantes suman chances de ganar objetos de colección o viajes y experiencias junto a importantes referentes en el mundo del deporte como Gabriela Sa",
+    "precio": 544,
+    "stock": 10,
+    "talle": "'S':['38']",
+    "imagen": "bcc34072-9bcd-481c-a197-09b6a84cbfb4.jpg",
+    "files": null
+  },
+  {
+    "id": 42,
+    "marca": "Nike",
+    "nombre": "zapatilladd test 3358461351",
+    "descripcion": "oninput=\"document.getElementById('imagen_name3').value = this.files[0].name\" ",
+    "precio": 687667,
+    "stock": 13,
+    "talle": [
+      "'S':['38']",
+      "'L':['40']",
+      "'XXL':['42']"
+    ],
+    "imagen": "272962676_4950335281679452_6186842155968437893_n.jpg",
+    "files": null
+  },
+  {
+    "id": 43,
+    "marca": "Adidas",
+    "nombre": "zapatilladd test 3358461351",
+    "descripcion": "producto editado con imagen editada",
+    "precio": "687670",
+    "stock": "17",
+    "talle": [
+      "'S':['38']",
+      "'L':['40']"
+    ],
+    "imagen": "244455123_231155489044290_754576424179807509_n.jpg",
+    "files": null
   }
 ]

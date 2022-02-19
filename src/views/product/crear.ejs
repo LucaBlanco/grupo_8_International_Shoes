@@ -49,10 +49,13 @@
             <label id="tStock"></label>
         </fieldset>
         <fieldset><label for="imagen">Imagen</label>
-            <input type="file" name="imagen" id="imagen" 
-            oninput="document.getElementById('imagen_name').value = this.files[0].name" />
+            <input type="file" name="imagen" id="imagen"/>
         </fieldset>
-        <input type="hidden" name="imagen_name" id="imagen_name" value="" >
+        <!--
+            este truquito ya no se usa je
+            oninput="document.getElementById('imagen_name3').value = this.files[0].name" 
+            <input type="hidden" name="imagen_name3" id="imagen_name3" value="" > 
+        -->
         <fieldset>
             <button type="submit">Guardar</button>
         </fieldset>
