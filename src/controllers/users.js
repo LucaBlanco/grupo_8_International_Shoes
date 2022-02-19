@@ -5,7 +5,9 @@ const users = {
 
     login: (req, res) => res.render('user/login'),
 
-    registro: (req, res) => res.render('user/registro')
+    registro: (req, res) => res.render('user/registro'),
+    
+    auth:(req, res) => res.render('user/auth')
 };
 
 

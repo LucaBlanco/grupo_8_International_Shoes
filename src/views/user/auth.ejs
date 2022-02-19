@@ -10,19 +10,19 @@
   <main>
     <section id="login">   
     <div class="center">
-      <h1>Acceso</h1>
-      <form action="/users/auth" method="post">
+      <h1>Ud se ha logueado correctamente</h1>
+      <form action="/" method="post">
         <div class="texto">
-          <input method="post" type="text" name="user" required>
+          <input method="post" type="text" name="user" disabled>
           <span></span>
           <label>Usuario</label>
         </div>
         <div class="texto">
-          <input method="post" type="password" name="pass" required>
+          <input method="post" type="password" name="pass" disabled>
           <span></span>
           <label>Contraseña</label>
         </div>
-        <input type="submit" value="Login" method="get">
+        <input type="submit" value="Login" disabled>
         <div class="pas">Olvidé mi contraseña<a href="#"></a></div>
         <div class="link_registro"><a href="/registro">Registrate</a></div>
       </form>
