@@ -9,7 +9,9 @@ section.banner img{
     
 }
 
-
+a {
+    text-decoration: none;
+}
 
 /* acomodar imagenes de productos */
 article.img{

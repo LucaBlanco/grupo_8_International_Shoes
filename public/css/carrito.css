@@ -45,6 +45,11 @@
     margin-top: 30px;
     margin-left: 12px;
 }
+
+.borrar > .fa-trash-alt{
+    margin-top: 0px;
+    margin-left: 0px;
+}
 .btn-subm-compra{
     background-color: #F7F7F7;
     border: 2px solid #DCDCDC;

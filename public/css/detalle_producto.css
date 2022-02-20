@@ -16,6 +16,33 @@
     background-color: rgb(211, 211, 211);
 }
 
+.editar {
+    padding: 0 8px 0 8px;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.editar:link{
+    text-decoration: none;
+}
+.editar:hover, .editar:active {
+    background-color: greenyellow;
+    color: black;
+}
+
+.borrar {
+    width: 75px;
+    height: 25px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.borrar:hover, .borrar:active {
+    background-color: purple;
+}
+
 .imagenProducto img {
     display: block;
     margin: auto;

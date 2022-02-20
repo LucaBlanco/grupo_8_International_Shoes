@@ -29,23 +29,31 @@ nav{
 }
 
 nav ul{
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+  display: flex;
+  list-style: none;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
 }
 
 nav ul li.logo{
-    flex: 1;
-    font-size: 30px;
-    font-weight: 750;
+  display: flex;
+  font-size: 39px;
+  font-weight: 700;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
 }
-nav ul li.logo img{
-    flex: 1;
-    width: 20%;
+
+.logo > img{
+  flex: 1;
+  height: 80px;
+  width: 80px;
+  padding-bottom: 0px;
 }
+
 
 nav ul div.items{
     padding: 0 25px;

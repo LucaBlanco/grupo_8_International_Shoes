@@ -75,31 +75,6 @@
     }
   },
   {
-    "id": 4,
-    "nombre": "Adidas Red Line",
-    "marca": "Adidas",
-    "descripcion": "tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus",
-    "precio": 415,
-    "stock": 15,
-    "talle": {
-      "S": [
-        "38"
-      ],
-      "M": [
-        "39"
-      ],
-      "L": [
-        "40"
-      ],
-      "XL": [
-        "41"
-      ],
-      "XXL": [
-        "42"
-      ]
-    }
-  },
-  {
     "id": 5,
     "nombre": "Nike All black",
     "marca": "Nike",
@@ -123,24 +98,6 @@
         "42"
       ]
     }
-  },
-  {
-    "id": 6,
-    "nombre": "Truchada",
-    "marca": "Louis Vuitton",
-    "descripcion": "justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in badsadasdasdases",
-    "precio": "294",
-    "stock": "16",
-    "talle": [
-      "'M':['39']",
-      "'L':['40']",
-      "'XL':['41']",
-      "'XXL':['42']"
-    ],
-    "name": "Truchada",
-    "price": "294",
-    "description": "justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in badsadasdasdases",
-    "imagen": "190902961_468591997553812_6698620888644924913_n.jpg"
   },
   {
     "id": 7,
@@ -296,31 +253,6 @@
       ],
       "precio": "34234",
       "stock": "14",
-      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
-    },
-    "files": null
-  },
-  {
-    "id": 16,
-    "marca": "yellow",
-    "nombre": "gjghj",
-    "descripcion": "gjhjghj",
-    "precio": 567,
-    "stock": 1,
-    "talle": [
-      "'S':['38']",
-      "'L':['40']"
-    ],
-    "imagen": {
-      "marca": "yellow",
-      "nombre": "gjghj",
-      "descripcion": "gjhjghj",
-      "talle": [
-        "'S':['38']",
-        "'L':['40']"
-      ],
-      "precio": "567",
-      "stock": "1",
       "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
     },
     "files": null
@@ -713,17 +645,6 @@
       "'XXL':['42']"
     ],
     "imagen": "273698995_4679597568776243_7773162671633678892_n.jpg",
-    "files": null
-  },
-  {
-    "id": 41,
-    "marca": "Louis Vuitton",
-    "nombre": "",
-    "descripcion": "6UN EJEMPLO\r\nPara festejar sus 20 años, la Fundación PUPI, que lidera el ex futbolista y vicepresidente del Inter Javier Zanetti, comenzó una campaña para ayudar a distintas ONG que atraviesan una etapa de crisis desde la emergencia sanitaria.\r\nPor un dólar, los participantes suman chances de ganar objetos de colección o viajes y experiencias junto a importantes referentes en el mundo del deporte como Gabriela Sa",
-    "precio": 544,
-    "stock": 10,
-    "talle": "'S':['38']",
-    "imagen": "bcc34072-9bcd-481c-a197-09b6a84cbfb4.jpg",
     "files": null
   },
   {

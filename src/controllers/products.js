@@ -42,6 +42,13 @@ const controller = {
         return producto ? res.render('product/detalle_producto',{
             title: 'Product', producto: producto
         }): res.render( 'error', {title: 'Error' ,error: 'No se encontro ningún producto'})
+    },
+    carrito:(req, res) => {
+        res.render('product/carrito')
+    },
+    trash: (req, res) => {
+        trash(req.body.id);
+        return res.redirect('/productos');
     }
 }
 

@@ -35,6 +35,12 @@
             <nav>
                 <a href="/carrito"><button type="submit" class="botonCompra">AGREGAR AL CARRITO <i class="fas fa-shopping-cart"></i></button></a>
             </nav>
+            <a class="editar" href="/productos/editar/<%= producto.id %>"><i class="far fa-edit"></i> Editar </a>
+
+            <form action="/productos/borrar?m=DELETE" method="post">
+                <input type="hidden" name="id" value="<%= producto.id %>">
+                <button class="borrar" type="submit"><i class="fas fa-trash-alt"> Borrar</i></button>
+            </form>  
         </div>
 
     </div>

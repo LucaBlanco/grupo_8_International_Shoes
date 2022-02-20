@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const router = Router();
-const {index, show, nuevo, storage, editar, modify, trash, details} = require('../controllers/products');
+const {index, show, nuevo, storage, editar, modify, trash, details,carrito} = require('../controllers/products');
 
 const multer = require('multer');
 const folder = require('../middlewares/storage');
@@ -17,13 +17,15 @@ router.post('/guardar', upload, storage);
 router.get('/editar/:id', editar)
 router.put('/actualizar', upload, modify)
 
+//carrito debe ir antes que detalle de producto para que no se confunda /'producto' con un :id
+router.get('/carrito', carrito)
 router.get('/:id', details)
 
-/* router.get('/:id', show) */
+
+router.delete('/borrar', trash)
 
 /*
 router.get('/', index)
-router.get('/:id', show)
 router.delete('/borrar', trash)
 */
 module.exports = router;

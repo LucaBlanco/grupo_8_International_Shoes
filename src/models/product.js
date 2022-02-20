@@ -26,6 +26,10 @@ const model = {
         let lista = model.list().sort((a,b) => a.id < b.id ? -1: a.id > b.id ? 1 : 0);
         lista.push(data);
         model.write(lista);
+    },
+    trash: id => {
+        let productos = model.list().sort((a,b) => a.id < b.id ? -1: a.id > b.id ? 1 : 0);
+        model.write(productos.filter(producto => producto.id != id));
     }
 }
 
