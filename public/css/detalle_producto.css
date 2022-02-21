@@ -1,8 +1,9 @@
 /*PRODUCTO */
 .detalleProducto{
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
     width: 100%;
     height: 100%;
-    background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -12,62 +13,55 @@
 }
 
 .imagenProducto{
+    margin-left: 20px;
     left: 0;
+    width: 50%;
     background-color: rgb(211, 211, 211);
-}
-
-.editar {
-    padding: 0 8px 0 8px;
-    color: white;
-    background-color: green;
-    border-radius: 5px;
-    border: 2px solid black;
-}
-.editar:link{
-    text-decoration: none;
-}
-.editar:hover, .editar:active {
-    background-color: greenyellow;
-    color: black;
-}
-
-.borrar {
-    width: 75px;
-    height: 25px;
-    color: white;
-    background-color: red;
-    border-radius: 5px;
-    border: 2px solid black;
-}
-.borrar:hover, .borrar:active {
-    background-color: purple;
 }
 
 .imagenProducto img {
     display: block;
+    padding: 5px;
     margin: auto;
     width: 50%;
     height: auto;
 }
 
 .detalle{
+    padding-top: 10px;
+    padding-left: 15px;
     right: 0;
     width: 40%;
     float: right;
 }
+.descripcion p{
+    font-weight: normal;
+    padding: 5px;
+}
 
 .talles{
+    color: black;
+    font-weight: bolder;
     border-top: 3px solid black;
     display: grid
 }
 
 .botonCompra{
+    color: black;
+    font-weight: 900;
     background-color: #F7F7F7;
     border: 2px solid #DCDCDC;
     border-radius: 22px;
     width: 214px;
     height: 44px;
 }
+
+.fa, .fas {
+    font-weight: 900;
+    color: crimson;
+    font-size: initial;
+}
+
 @media (min-width: 210px) {    
     .detalleProducto{
         flex-wrap: wrap;
