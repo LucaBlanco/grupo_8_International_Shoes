@@ -121,6 +121,10 @@ nav ul li.btn span{
 nav ul li.btn span.show:before{
     content: '\f00d';
 }
+.botonb{
+  color: #000000;
+  font-weight: 800;
+}
 
 @media screen and (max-width: 1052px) {
     nav{
