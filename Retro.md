@@ -1,11 +1,11 @@
-Retrospectiva de estrella de mar- Spring 3
+Retrospectiva de estrella de mar- Spring 4
 
 Start Doing: Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar. O tal vez son soluciones comprobadas que notamos que deberíamos usar.
 
 Juan Fernandez: mejoras en el diseño del home/interfaz, colaboración sincrónica 
 Lucas Blanco: Agregar media querys a login y registro, crear los css de detalle de login y registro. Realizar un carrito fijo en pantalla para poder ingresar a el desde cualquier perspectiva.
 Lucas Muñoz: ajustar el css de detalle de producto
-Mariana Sosa: Ajustar el css de login y registro.
+Mariana Sosa: usar clases en el css.
 
 More of: Los [Start Doing] se convertirán en [More of]. Esto significa aquellas cosas que estamos usando o haciendo y que queremos que mejoren. Son prácticas que creemos que requieren más refinamiento y que nos gustan mucho.
 
@@ -26,10 +26,11 @@ Less of: En este punto ponemos aquello que tal vez en una retrospectiva fue [Sta
 Juan Fernandez: daylies
 Lucas Blanco:--
 Luca Muñoz:--
-Mariana Sosa:---
+Mariana Sosa: daylies
  
 Stop Doing: En este punto exponemos aquellas prácticas que a pesar de ser [Less of] pues podemos eliminarlas. Cuando el equipo ve que no le da valor o simplemente no le gusta una práctica puede optar por eliminarla.
-Juan Fernandez: --
+
+Juan Fernandez: generalizar las css.
 Lucas Blanco:--
 Luca Muñoz:--
 Mariana Sosa:---
