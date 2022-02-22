@@ -9,12 +9,40 @@ main{
     align-items: center;
     text-align: center;
 }
+
 input{
     border-radius: 2%;
     border-color: #000;
     border-style:outset ;
     margin: 10px;
     text-align: center;
+    font: 15px Arial, sans-serif;
+    color: #000;
+}
+textarea{
+    border-radius: 2%;
+    border-color: #000;
+    border-style:outset ;
+    margin: 10px;
+    font: 15px Arial, sans-serif;
+    color: #000;
+}
+select, select>option{
+    border-radius: 2%;
+    border-color: #000;
+    border-style:outset ;
+    margin: 10px;
+    font: 15px Arial, sans-serif;
+    color: #000;
+}
+.btn-submit{
+    border-radius: 5px;
+    border-color: #000;
+    font: 15px Arial, sans-serif;
+    color: #000;
+    background-color: darkolivegreen;
+    height: 35px;
+    width: 150px;
 }
 
 footer{

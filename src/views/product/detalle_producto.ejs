@@ -18,19 +18,16 @@
             <label for="">Precio USD <%=producto.precio %> </label>
             
             <div class="talles">
-                <label for="talles">Talles  </label>
+                <label for="talles">Talles  </label>       
             </div>
-            <div>
+            <div>                
                 <select name="talles" id="talles" class="talles">
                     <option value>Elegí una opción...</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="49">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
+                    <% if (producto.talle != undefined) { %>
+                        <% for( let index = 0; index < producto.talle.length; index++ ) { %>
+                            <option value="<%= producto.talle[index] %>"><%= producto.talle[index] %></option>
+                        <% } %>
+                    <% } %>   
                 </select>
             </div>
             <nav>
