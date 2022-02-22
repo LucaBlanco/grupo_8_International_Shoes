@@ -4,9 +4,8 @@
     <%- include("../partials/head")  %> 
 </head>
 <body>
-    <h1>List of Products</h1>
-
-    <%- include("../partials/nav")  %> 
+    <%- include("../partials/nav")  %>
+    <h1>Listado de Productos</h1>
 
     <% if (productos.length>0) { %>
         <ul>
@@ -17,6 +16,6 @@
     <% } else { %>
         <h2>No se encontro ningun producto</h2>
      <% } %>      
-     <%- include("./partials/footer") %> 
+     <%- include("../partials/footer") %> 
 </body>
 </html>

@@ -1,5 +1,15 @@
 const {all, filter, match, generate, create, list, write, trash} = require('../models/product');
 const controller = {
+    index: (req, res) => {
+        const {search} = req.query;
+        return search ? res.render('product/list',{
+            title: 'Search | '+search,
+            productos: filter('name', search)
+        }) : res.render('product/listado',{
+            title: 'Product List',
+            productos: all()
+        })
+    },
     nuevo: (req, res) => res.render('product/crear', {title: 'Crear'}),
     storage: (req, res) => {
         req.body.file = req.file;
