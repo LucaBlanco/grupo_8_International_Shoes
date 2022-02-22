@@ -2,9 +2,9 @@ const {all, filter, match, generate, create, list, write, trash} = require('../m
 const controller = {
     index: (req, res) => {
         const {search} = req.query;
-        return search ? res.render('product/list',{
+        return search ? res.render('product/listado',{
             title: 'Search | '+search,
-            productos: filter('name', search)
+            productos: filter('marca', search)
         }) : res.render('product/listado',{
             title: 'Product List',
             productos: all()
