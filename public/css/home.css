@@ -19,15 +19,31 @@ article.img{
      
 }
 
+.item_producto{
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 0;
+    padding-top: 0 !important;
+}
+.productos-listado{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
 img{
     padding-bottom: 15px;
 }
 
 div.productos article{
-    padding-top: 10px;
+    /**padding-top: 10px;*/
 }
 main section article img{
-    width: 90%;
+    width: 100%;
 }
 /* configuracion del main  */
 main{
@@ -56,6 +72,13 @@ main section article{
     border-color: papayawhip;
 }
 /* CORRECCION:Aparecer y desaparecer  EL PRECIO */
+.precio-item{
+    opacity: 100%;
+    font-weight: bold;
+    color: black;
+    width: 30%;
+}
+
 .precio{
     opacity: 0%;
     transition-property: opacity;

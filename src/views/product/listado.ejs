@@ -8,11 +8,20 @@
     <h1>Listado de Productos</h1>
 
     <% if (productos.length>0) { %>
-        <ul>
+    <div class="productos-listado">
     <% productos.forEach(producto => { %>
-     <li><%= producto.id %> - <a href="/productos/<%=producto.id%>"> <%= producto.marca%> - <%= producto.nombre%> $<%= producto.precio%> </a></li>
+
+        <article class="item_producto">
+            <a href="/productos/<%= producto.id %>"><img src="/<%= producto.imagen %>" width="300" alt=""></a>
+            <div class="articulo">
+                <i class="fas fa-plane"></i>
+                <p class="precio-item">$<%= producto.precio%></p>
+                <h4 class="descripcion"><%= producto.marca%></h4>
+            </div>
+        </article>
+
     <% }) %>
-</ul>
+    </div>
     <% } else { %>
         <h2>No se encontro ningun producto</h2>
      <% } %>      
