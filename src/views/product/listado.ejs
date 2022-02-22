@@ -10,7 +10,7 @@
     <% if (productos.length>0) { %>
         <ul>
     <% productos.forEach(producto => { %>
-     <li><a href="/productos/<%=producto.id%>"> <%= producto.nombre%> </a></li>
+     <li><%= producto.id %> - <a href="/productos/<%=producto.id%>"> <%= producto.marca%> - <%= producto.nombre%> $<%= producto.precio%> </a></li>
     <% }) %>
 </ul>
     <% } else { %>

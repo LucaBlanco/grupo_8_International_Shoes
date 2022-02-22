@@ -285,33 +285,6 @@
     "files": null
   },
   {
-    "id": 18,
-    "marca": "yellow",
-    "nombre": "gjghj",
-    "descripcion": "gjhjghj",
-    "precio": 567,
-    "stock": 6,
-    "talle": [
-      "'S':['38']",
-      "'M':['39']",
-      "'L':['40']"
-    ],
-    "imagen": {
-      "marca": "yellow",
-      "nombre": "gjghj",
-      "descripcion": "gjhjghj",
-      "talle": [
-        "'S':['38']",
-        "'M':['39']",
-        "'L':['40']"
-      ],
-      "precio": "567",
-      "stock": "6",
-      "imagen": "WhatsApp Image 2021-12-30 at 1.56.45 PM.jpeg"
-    },
-    "files": null
-  },
-  {
     "id": 19,
     "marca": "yellow",
     "nombre": "gjghj",
@@ -422,16 +395,14 @@
     "marca": "Louis Vuitton",
     "nombre": "",
     "descripcion": "",
-    "precio": 0,
-    "stock": 1,
+    "precio": "3",
+    "stock": "1",
     "talle": [
-      "'S':['38']",
       "'M':['39']",
-      "'L':['40']",
       "'XL':['41']",
       "'XXL':['42']"
     ],
-    "imagen": "",
+    "imagen": "31230f9f-2163-47ed-9ca7-2a1a55e5ef6f.jpg",
     "files": null
   },
   {
