@@ -66,15 +66,27 @@
     "nombre": "Patoruzito test 55",
     "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti ipsum ullam quia ex. Tenetur laborum, aspernatur voluptates doloremque quisquam accusantium, alias quibusdam culpa odit minus eveniet vitae omnis sunt!sss",
     "precio": "49996",
-    "stock": "16",
-    "imagen": "montañoza_mountain.jpg",
+    "stock": "14",
+    "imagen": "imagen1645835573563.jpg",
     "files": null,
     "talle": [
-      "S/38",
       "M/39",
-      "L/40",
       "XL/41",
       "XXL/42"
     ]
+  },
+  {
+    "id": 49,
+    "marca": "Nike",
+    "nombre": "zapatilla test multer",
+    "descripcion": "",
+    "precio": 345345,
+    "stock": 19,
+    "talle": [
+      "M/39",
+      "XXL/42"
+    ],
+    "imagen": "imagen1645835531037.jpg",
+    "files": null
   }
 ]
