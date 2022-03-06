@@ -2,7 +2,7 @@ const fs =require('fs');
 const path=require('path');
 
 const model={
-    file: resolve(__dirname,"../data","users.json"),
+    file: path.resolve(__dirname,"../data","users.json"),
     read: () => readFileSync(model.file),
     list: () => JSON.parse(model.read()),
     convert: data => JSON.stringify(data, null, 2),
