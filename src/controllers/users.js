@@ -1,3 +1,8 @@
+const fs= require('fs');
+const path= require('path');
+const{write,list,all,find,create,generate,update,garbage}=require('../models/users');
+
+
 const users = {
     
     login: (req, res) => res.render('user/login'),

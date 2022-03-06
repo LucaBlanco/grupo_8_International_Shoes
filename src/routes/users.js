@@ -1,4 +1,5 @@
 const {Router} = require('express');
+const multer=require('multer');
 
 const {login, registro, auth} = require('../controllers/users');
 
