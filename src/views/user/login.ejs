@@ -18,8 +18,12 @@
           <label>Usuario</label>
         </div>
         <div class="texto">
-          <input method="post" type="password" name="pass" required>
-          <span></span>
+          <input method="post" type="password" name="password" required>
+          <span>
+            <% if (locals.errors && errors.email) { %>
+              <div><%= errors.email.msg %> </div>
+             <% } %>
+          </span>
           <label>Contraseña</label>
         </div>
         <input type="submit" value="Login" method="get">

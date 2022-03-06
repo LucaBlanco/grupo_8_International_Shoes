@@ -10,7 +10,9 @@
   <main>
     <section id="login">   
     <div class="center">
-      <h1>Ud se ha logueado correctamente</h1>
+      <% if (locals.errors && errors.email) { %>
+       <div><%= errors.email.msg %> </div>
+      <% } %>
       <form action="/" method="post">
         <div class="texto">
           <input method="post" type="text" name="user" disabled>

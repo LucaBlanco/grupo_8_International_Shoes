@@ -4,7 +4,7 @@
   "description": "DESCRIPCION DEL SITIO:\r El sitio se enfoca en la venta de zapatillas de marcas y estilos que no se encuentran normalmente en tiendas de nuestro país. \r La página ofrece un amplio stock de zapatillas importadas de todas las marcas y estilos, y a su vez, tiene la posibilidad de dar al usuario y comprador el poder conseguir la zapatilla que busca haciendonos el pedido de la misma y nosotros gestionando la importación de la misma para que le llegue a su hogar.",
   "main": "src/app.js",
   "scripts": {
-    "test": "nodemon src/app.js -e mjs,js,json,ejs,css",
+    "test": "clear && nodemon src/app.js -e mjs,js,json,ejs,css",
     "start": "node src/app.js"
   },
   "author": "Grupo 8",
