@@ -24,15 +24,15 @@ const model={
     generate: data => Object({
         id: model.list().length > 0 ? model.list().pop().id + 1 : 1,
         //model.list().sort((a,b) => a.id < b.id ? -1: a.id > b.id ? 1 : 0)
-        name: data.name,
-        lastname: data.lastname,
+        first_name: data.firstname,
+        last_name: data.lastname,
         email: data.email,
-        birth_date:data.birth_date,
+        date_of_birth:data.date_of_birth,
         country:data.country,
         providence:data.providence,
         city:data.city,
         addres:data.addres,
-        pass:data.pass,
+        password:data.password,
         pass_confirm:data.pass_confirm,
         
 /*         files: data.files && data.files.length > 0 ? data.files.map(file => file.filename): null,
@@ -41,15 +41,15 @@ const model={
         let rows=model.list().sort((a,b) => a.id < b.id ? -1: a.id > b.id ? 1 : 0)
         rows=rows.map((usuario)=>{
             if(usuario.id==data.id){
-                usuario.name=data.name;
-                usuario.lastname=data.lastname;
+                usuario.first_name=data.firstname;
+                usuario.last_name=data.lastname;
                 usuario.email=data.email;
-                usuario.birth_date=data.birth_date;
+                usuario.date_of_birth=data.date_of_birth;
                 usuario.country=data.counry;
                 usuario.providence=data.providence;
                 usuario.city=data.city;
                 usuario.addres=data.addres;
-                usuario.pass=data.pass;
+                usuario.password=data.password;
                 usuario.pass_confirm=data.pass_confirm;
 /*                 usuario.files=data.files && data.files.length > 0 ? data.files.map(file => file.filename): null;
  */                return usuario
