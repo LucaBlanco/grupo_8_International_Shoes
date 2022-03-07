@@ -8,6 +8,7 @@ const users = {
     login: (req, res) => res.render('user/login'),
     registro: (req, res) => res.render('user/registro'),
 
+    //registro: (req, res) => res.render('user/registro'),
     auth:(req, res) =>{
         let userArr2 = JSON.parse(JSON.stringify(userArr));
         let userToLogin = userArr2.find(user => user.email==req.body.user);
