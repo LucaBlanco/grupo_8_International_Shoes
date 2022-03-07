@@ -8,12 +8,14 @@ const model={
     convert: data => JSON.stringify(data, null, 2),
     write: data => writeFileSync(model.file, model.convert(data)),
     all: ()=>{
-        return this.readFile();
+        //return this.readFile();
+        return model.list()
     },
     find(id){
       let rows=this.readFile();
       return rows.find(row=>row.id==id)
     },
+    match:  (propiedad, valor) => model.all().find(p => p[propiedad] == valor),
     create: data=>{
         let lista=model.list().sort((a,b) => a.id < b.id ? -1: a.id > b.id ? 1 : 0)
         lista.push(data),

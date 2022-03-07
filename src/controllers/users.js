@@ -1,7 +1,7 @@
 const session = require('express-session');
 const fs= require('fs');
 const path= require('path');
-const{write,list,all,find,create,generate,update,garbage}=require('../models/users');
+const{write,list,all,find, match, create,generate,update,garbage}=require('../models/users');
 
 
 const users = {   
@@ -11,7 +11,8 @@ const users = {
     //registro: (req, res) => res.render('user/registro'),
     auth:(req, res) =>{
         let userArr2 = JSON.parse(JSON.stringify(userArr));
-        let userToLogin = userArr2.find(user => user.email==req.body.user);
+        //let userToLogin = userArr2.find(user => user.email==req.body.user);
+        let userToLogin = match('email', req.body.user);
         if(userToLogin){
             if(userToLogin.password == req.body.password){
                 delete userToLogin.password;
@@ -27,9 +28,14 @@ const users = {
             }
         })
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/')
+    },
     perfil: (req, res) => {
-        console.log(req.session);
-        res.render('user/profile')
+        res.render('user/profile', {
+            user: req.session.usuarioLogueado
+        });
     }
 }
 

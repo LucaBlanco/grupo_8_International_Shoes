@@ -8,10 +8,17 @@
   <%- include("../partials/nav") %>
 </div>
   <main>
-    <section id="login">   
-    <div class="center">
+    <section id="profile">   
 
-    </div>
+      <% if (locals.user) { %>
+        <div class="card">
+          <img class="profile_img" src="/<%= user.image %>" alt="<%= user.first_name %>" style="width:100%">
+          <h1><%= user.first_name %> <%= user.last_name %></h1>
+          <p class="title"> <%= user.email %> </p>
+          <p><%= user.category %></p>
+        </div>
+      <% } %>
+
   </section>
   </main>
     
