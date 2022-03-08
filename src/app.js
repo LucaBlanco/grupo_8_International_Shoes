@@ -2,6 +2,7 @@ const express=require("express");
 const { resolve } = require('path');
 const method = require('method-override');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const app= express();
 
@@ -15,6 +16,8 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(isLoggedMidle);
+
+app.use(cookies());
 
 app.set('view engine', 'ejs');
 app.set('views',  resolve(__dirname, './views'));
