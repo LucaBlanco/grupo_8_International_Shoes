@@ -8,15 +8,18 @@ const users = {
     login: (req, res) => res.render('user/login'),
     registro: (req, res) => res.render('user/registro'),
 
-    //registro: (req, res) => res.render('user/registro'),
     auth:(req, res) =>{
         let userArr2 = JSON.parse(JSON.stringify(userArr));
-        //let userToLogin = userArr2.find(user => user.email==req.body.user);
         let userToLogin = match('email', req.body.user);
         if(userToLogin){
             if(userToLogin.password == req.body.password){
                 delete userToLogin.password;
                 req.session.usuarioLogueado = userToLogin;
+
+                if (req.body.remember_user) {
+                    res.cookie('userEmail', req.body.user, {maxAge: (1000 *60) * 5})
+                }
+
                 return res.redirect('./perfil')                
             }
         }
@@ -29,10 +32,12 @@ const users = {
         })
     },
     logout: (req, res) => {
-        req.session.destroy();
+        res.clearCookie('userEmail');
+        req.session.destroy();        
         return res.redirect('/')
     },
     perfil: (req, res) => {
+        console.log(req.cookies.userEmail);
         res.render('user/profile', {
             user: req.session.usuarioLogueado
         });
