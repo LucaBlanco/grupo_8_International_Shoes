@@ -21,7 +21,7 @@
           <input method="post" type="password" name="password" required>
           <span>
             <% if (locals.errors && errors.email) { %>
-              <div><%= errors.email.msg %> </div>
+              <div class="alert" ><%= errors.email.msg %> </div>
              <% } %>
           </span>
           <label>Contraseña</label>

@@ -10,7 +10,10 @@
     <main class="register">
         <div class="center">
             <h1>Registro</h1>
-            <form action="/registro/guardar" method="POST"  >
+            <% if (locals.errors && errors.registro) { %>
+                <div class="alert" ><%= errors.registro.msg %> </div>
+            <% } %>
+            <form action="/registro/guardar" method="POST" enctype="multipart/form-data">
                 <input class="registro" type="text" name="first_name" placeholder="NOMBRES">
                 <input  class="registro" type="text" name="last_name" placeholder="APELLIDOS">
                 <input class="registro"  type="text" name="user" placeholder="NOMBRE DE USUARIO">

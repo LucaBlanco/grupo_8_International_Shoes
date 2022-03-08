@@ -1,5 +1,6 @@
 const { readFileSync, writeFileSync, unlinkSync, existsSync } = require('fs');
 const path = require('path');
+const bcryptjs = require('bcryptjs');
 
 const model = {
     file: path.resolve(__dirname, "../data", "users.json"),
@@ -8,7 +9,6 @@ const model = {
     convert: data => JSON.stringify(data, null, 2),
     write: data => writeFileSync(model.file, model.convert(data)),
     all: () => {
-        //return this.readFile();
         return model.list()
     },
     find(id) {
@@ -25,18 +25,16 @@ const model = {
         email: data.email,
         date_of_birth: data.date_of_birth,
         country: data.country,
-        providence: data.providence,
+        province: data.province,
         city: data.city,
         addres: data.addres,
-        password: data.password,
-        pass_confirm: data.pass_confirm,
-
-/*         files: data.files && data.files.length > 0 ? data.files.map(file => file.filename): null,
- */    }),
+        password: bcryptjs.hashSync(data.password, 10),
+        image: data.image,
+    }),
     create: data => {
         let lista = model.list().sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
         lista.push(data),
-        model.write(lista); //actualizar la lista de usuarios? con el usuario nuevo//
+        model.write(lista); 
     },
     update: data => {
         let rows = model.list().sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)

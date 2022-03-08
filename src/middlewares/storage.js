@@ -17,7 +17,7 @@ module.exports = () => multer.diskStorage({
 const path = require('path');
 const multer = require('multer');
 
-const multerDiskStorage=multer.diskStorage({
+module.exports = () => multer.diskStorage({
      destination:(req,file,cb)=>
      { let folder =path.resolve(__dirname,'../uploads/profileImages');
        cb(null,folder);
