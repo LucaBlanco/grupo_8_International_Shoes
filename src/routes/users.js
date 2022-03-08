@@ -6,7 +6,8 @@ const guestMidle = require('../middlewares/guestMidle')
 const authMidle = require('../middlewares/authMidle')
 
 //const {login, auth} = require('../controllers/users');
-const {index,deposit}= require('../controllers/user_register');
+const {index, deposit}= require('../controllers/user_register');
+const { create } = require('../models/product');
 const router = Router();
 
 //const upload=multer({storage});
