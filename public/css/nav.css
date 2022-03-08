@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    color: #f2f2f2;
     box-sizing: border-box;
 }
 #buscar:hover{
@@ -58,6 +57,7 @@ nav ul li.logo{
   align-content: center;
   flex-wrap: wrap;
   max-width: min-content;
+  color: white;
 }
 
 .logo > img{
@@ -76,6 +76,7 @@ nav ul div.items a{
     text-decoration: none;
     font-size: 18px;
     padding: 0 12px;
+    color: #f2f2f2;
 }
 nav ul div.items a:hover{
     color: red;
