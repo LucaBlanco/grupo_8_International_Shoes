@@ -10,7 +10,7 @@ const controller={
             create(perfilNuevo);
             return res.redirect('/users/'+perfilNuevo.id)
         }else{
-            const perfilNuevo=generate(req.body);
+            const perfilNuevo=generate(req.body);            
             create(perfilNuevo);
             return res.redirect('/users/'+perfilNuevo.id);
         }

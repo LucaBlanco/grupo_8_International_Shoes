@@ -32,5 +32,24 @@
   },
   {
     "id": 24
+  },
+  {
+    "id": 25
+  },
+  {
+    "id": 26
+  },
+  {
+    "id": 27
+  },
+  {
+    "id": 28,
+    "email": "juanm.fernandez@hotmail.com",
+    "date_of_birth": "2022-03-11",
+    "country": "Argentina",
+    "city": "Resistencia",
+    "addres": "",
+    "password": "123",
+    "pass_confirm": "123"
   }
 ]
