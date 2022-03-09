@@ -21,19 +21,15 @@ app.use(session({
 app.use(cookies());
 app.use(isLoggedMidle);
 
+app.set('port', process.env.PORT || 3000);
+app.set('host', process.env.HOST || 'http://localhost');
 app.set('view engine', 'ejs');
 app.set('views',  resolve(__dirname, './views'));
 app.use(express.static(resolve(__dirname, '../uploads')));
 app.use(express.urlencoded({extended: false}));
 app.use(method("m"))
-/*
-app.listen(process.env.PORT || 3030, function() {
-    console.log('servidor corriendo en puerto 3030');
-})
-*/
-app.listen(process.env.ALWAYSDATA_HTTPD_PORT, process.env.ALWAYSDATA_HTTPD_IP || 3030, function() {
-    console.log('servidor corriendo en puerto 3030');
-})
+
+app.listen(app.get('port'), () => console.log('App online => '+app.get('host')+':'+app.get('port')));
 
 app.use(require('./routes/main'));
 app.use('/productos', require('./routes/product'));
@@ -43,10 +39,8 @@ app.get('/carrito',(req, res)=>{
     res.render(rutaIndex);
 })
 
-
 //rutas
 
 app.use(require('./routes/users'));
 
 app.use(require('./routes/users'))
-

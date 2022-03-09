@@ -37,7 +37,6 @@ const users = {
         return res.redirect('/')
     },
     perfil: (req, res) => {
-        console.log(req.cookies.userEmail);
         res.render('user/profile', {
             user: req.session.usuarioLogueado
         });
