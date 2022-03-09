@@ -26,8 +26,12 @@ app.set('views',  resolve(__dirname, './views'));
 app.use(express.static(resolve(__dirname, '../uploads')));
 app.use(express.urlencoded({extended: false}));
 app.use(method("m"))
-
+/*
 app.listen(process.env.PORT || 3030, function() {
+    console.log('servidor corriendo en puerto 3030');
+})
+*/
+app.listen(process.env.ALWAYSDATA_HTTPD_PORT, process.env.ALWAYSDATA_HTTPD_IP || 3030, function() {
     console.log('servidor corriendo en puerto 3030');
 })
 
