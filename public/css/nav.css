@@ -36,13 +36,12 @@ nav{
 
 nav ul{
   display: flex;
-  margin-right: 10%;
-  list-style: none;
+ /*  margin-right: 10%; */
+  list-style: none; 
   box-sizing: border-box;
-  justify-content: space-around;
-  align-items: baseline;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
   align-content: center;
 }
 
@@ -61,16 +60,19 @@ nav ul li.logo{
 }
 
 .logo > img{
-  flex: 1;
-  height: 80px;
-  width: 80px;
+  width: 25vw;
   padding-bottom: 0px;
 }
 
 
 nav ul div.items{
-    padding: 0 25px;
+    /* padding: 0 25px; */
     display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
 }
 nav ul div.items a{
     text-decoration: none;
