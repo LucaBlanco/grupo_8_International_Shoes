@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const multer=require('multer');
 
-const {login, registro, auth, perfil, logout} = require('../controllers/users');
+const {login, registro, auth, perfil, logout, listFromDb} = require('../controllers/users');
 const guestMidle = require('../middlewares/guestMidle')
 const authMidle = require('../middlewares/authMidle')
 const folder = require('../middlewares/users_img');
@@ -16,6 +16,8 @@ router.get('/login', guestMidle, login);
 
 router.get('/registro', guestMidle, index)
 router.post('/registro/guardar', upload, deposit);
+
+router.get('/list', listFromDb)
 
 router.post('/auth', auth)
 router.get('/perfil', authMidle, perfil)
