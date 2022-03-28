@@ -17,7 +17,7 @@ router.get('/login', guestMidle, login);
 router.get('/registro', guestMidle, index)
 router.post('/registro/guardar', upload, deposit);
 
-router.get('/list', listFromDb)
+router.get('/list', listFromDb) //db
 
 router.post('/auth', auth)
 router.get('/perfil', authMidle, perfil)

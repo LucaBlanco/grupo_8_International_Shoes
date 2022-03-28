@@ -1,4 +1,7 @@
 const {all, filter, match, generate, create, list, write, trash} = require('../models/product');
+
+const db = require('../database/models');
+
 const controller = {
     index: (req, res) => {
         const {search} = req.query;
@@ -10,6 +13,14 @@ const controller = {
             productos: all()
         })
     },
+    //with DB
+    listFromDb: (req, res) => {
+        db.Products.findAll()
+            .then(function(productos) {
+                res.render('product/listado', { productos: productos })
+            })
+    },
+
     nuevo: (req, res) => res.render('product/crear', {title: 'Crear'}),
     storage: (req, res) => {
         req.body.file = req.file;

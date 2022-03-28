@@ -9,12 +9,14 @@ const db = require('../database/models');
 const users = {   
     login: (req, res) => res.render('user/login'),
     registro: (req, res) => res.render('user/registro'),
+    //with DB
     listFromDb: (req, res) => {
         db.Users.findAll()
             .then(function(users) {
                 res.render('user/list', { users: users })
             })
     },
+
     auth:(req, res) =>{
         let userToLogin = match('email', req.body.user);
         if(userToLogin){
