@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include("../partials/head") %>
+    
+<body>
+
+   <%- include("../partials/nav") %>
+
+    <main class="register">
+        <div class="center">
+            <h1>Edición de perfil de usuario</h1>
+            <% if (locals.errors && errors.registro) { %>
+                <div class="alert" ><%= errors.registro.msg %> </div>
+            <% } %>
+            <form action="/users/edit/<%= user.id %>" method="POST" enctype="multipart/form-data"> 
+                <input class="registro" type="text" name="firstName" placeholder="NOMBRES" value="<%= user.firstName %>">
+                <input  class="registro" type="text" name="lastName" placeholder="APELLIDOS" value="<%= user.lastName %>">
+                <input class="registro"  type="text" name="userName" placeholder="NOMBRE DE USUARIO" value="<%= user.userName %>">
+                <input  class="registro" type="email" name="email" placeholder="E-MAIL" value="<%= user.email %>">
+                <br>
+                <label for="birth_date"><b>FECHA DE NACIMIENTO</b></label >
+                <br>
+                <input  class="registro" type="date" name="birthDate" value="<%= user.birthDate %>" id="birth_date">
+                <br>
+                <input  class="registro" type="text" name="country" placeholder="PAIS" value="<%= user.country %>">
+                <input  class="registro" type="text" name="province" placeholder="PROVINCIA" value="<%= user.province %>">
+                <input  class="registro" type="text" name="city" placeholder="CIUDAD" value="<%= user.city %>">
+                <input  class="registro" type="text" name="address" placeholder="DOMICILIO" value="<%= user.address %>">
+                        
+                <h4>ELEGÍ TU FOTO DE PERFIL</h4>
+                <input  type="file" name="image" value="<%= user.image %>">
+                <br>
+                <br>
+                <input class="boton"  type="submit" value="Confirmar cambios">
+            </form> 
+        </div>
+
+    </main>    
+    <%- include("../partials/footer") %>
+</body>  

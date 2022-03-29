@@ -16,7 +16,50 @@ const users = {
                 res.render('user/list', { users: users })
             })
     },
+    createDb: (req, res) => {
+        db.Users.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            userName: req.body.userName,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            birthDate: req.body.birthDate,
+            country: req.body.country,
+            province: req.body.province,
+            city: req.body.city,
+            address: req.body.address,
+            image: req.body.image
+        })
+    },
+    editDb: (req, res) => {
+        db.Users.findByPk(req.params.id)
+            .then(function(user){
+                res.render('user/userEdit', {user:user});
+            })
+    },
+    updateDb: (req, res) => {
+        db.Users.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            userName: req.body.userName,
+            //password: bcryptjs.hashSync(req.body.password, 10), mejor usar otro metodo para hacer update de password
+            birthDate: req.body.birthDate,
+            country: req.body.country,
+            province: req.body.province,
+            city: req.body.city,
+            address: req.body.address,
+            image: req.body.image
+        },
+        {
+            where: {id: req.params.id}
+        }
+        ).then(
+            res.send("ok, aca renderizaría el perfil")
+        )
+    },
 
+    //with JSON
     auth:(req, res) =>{
         let userToLogin = match('email', req.body.user);
         if(userToLogin){

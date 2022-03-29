@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const router = Router();
-const {index, show, nuevo, listFromDb, storage, editar, modify, trash, details,carrito} = require('../controllers/products');
+const {index, show, nuevo, listFromDb, storage, editar, modify, trash, details,carrito, editDb, updateDb} = require('../controllers/products');
 
 const multer = require('multer');
 const folder = require('../middlewares/storage');
@@ -16,6 +16,9 @@ router.post('/guardar', upload, storage);
 router.get('/editar/:id', editar)
 router.put('/actualizar', upload, modify)
 
+//db
+router.get('/edit/:id', editDb)
+router.put('/update', upload, updateDb)
 
 router.get('/carrito', carrito)
 router.get('/:id', details)

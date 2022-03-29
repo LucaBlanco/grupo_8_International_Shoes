@@ -20,7 +20,32 @@ const controller = {
                 res.render('product/listado', { productos: productos })
             })
     },
+    editDb: (req, res) => {
+        db.Products.findByPk(req.params.id)
+            .then(function(producto){
+                res.render('product/productEdit', {producto:producto});
+            })
+    },
+    updateDb: (req, res) => {
+        db.Products.update({
+            marca: req.body.marca,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            stock: req.body.stock,
+            talle: req.body.talle,
+            image: req.body.imagen
+        },
+        {
+            where: {id: req.body.id}
+        }
+        ).then(
+            console.log(req.body.id, req.body.talle, req.body.marca),
+            res.send("ok, aca renderizaría detalle_producto")
+        )
+    },
 
+    //json
     nuevo: (req, res) => res.render('product/crear', {title: 'Crear'}),
     storage: (req, res) => {
         req.body.file = req.file;
