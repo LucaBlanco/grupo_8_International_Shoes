@@ -38,6 +38,9 @@ const users = {
             })
     },
     updateDb: (req, res) => {
+        if(req.file){
+            req.body.image = req.file.filename;
+        }
         db.Users.update({
             firstName: req.body.firstName,
             lastName: req.body.lastName,

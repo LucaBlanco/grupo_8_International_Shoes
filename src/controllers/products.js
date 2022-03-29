@@ -27,6 +27,10 @@ const controller = {
             })
     },
     updateDb: (req, res) => {
+        if(req.file){
+            req.body.imagen = req.file.filename;
+            console.log(req.file.filename);
+        }
         db.Products.update({
             marca: req.body.marca,
             nombre: req.body.nombre,
