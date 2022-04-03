@@ -17,6 +17,13 @@
                 <i class="fas fa-plane"></i>
                 <p class="precio-item">$<%= producto.precio%></p>
                 <h4 class="descripcion"><%= producto.marca%></h4>
+                <form action="/productos/borrardb?m=DELETE" method="post">
+                    <input type="hidden" name="id" value="<%= producto.id %>">
+                    <button class="borrar" type="submit"><i class="fas fa-trash-alt" style="border: none;"></i>Borrar</button>
+                </form>
+                <a class="editar" href="/productos/edit/<%= producto.id %>">
+                    <button class="editar" type="button"><i class="far fa-edit" style="border: none;"></i>Editar</button>
+                </a>
             </div>
         </article>
 

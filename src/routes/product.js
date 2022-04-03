@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const router = Router();
-const {index, show, nuevo, listFromDb, storage, editar, modify, trash, details,carrito, editDb, updateDb} = require('../controllers/products');
+const {index, show, nuevo, listFromDb, storage, editar, modify, trash, details,carrito, editDb, updateDb, deletedb} = require('../controllers/products');
 
 const multer = require('multer');
 const folder = require('../middlewares/storage');
@@ -24,5 +24,6 @@ router.get('/carrito', carrito)
 router.get('/:id', details)
 
 router.delete('/borrar', trash)
+router.delete('/borrardb', deletedb) //db
 
 module.exports = router;

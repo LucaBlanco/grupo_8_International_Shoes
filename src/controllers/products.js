@@ -48,6 +48,16 @@ const controller = {
             res.send("ok, aca renderizaría detalle_producto")
         )
     },
+    deletedb: (req, res) =>{
+        db.Products.destroy({
+            where: {
+                id: req.body.id
+            }
+        })
+        .then(
+            res.redirect('listadodb')
+        )
+    },
 
     //json
     nuevo: (req, res) => res.render('product/crear', {title: 'Crear'}),

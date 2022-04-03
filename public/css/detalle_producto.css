@@ -1,4 +1,31 @@
 /*PRODUCTO */
+.borrar {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 0px;
+    color: black;
+    background-color: rgb(221, 164, 164);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.editar {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 0px;
+    color: black;
+    background-color: rgb(114, 206, 106);
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
 .detalleProducto{
     font-family: 'Barlow', sans-serif;
     font-weight: 900;

@@ -15,6 +15,13 @@
             <a href="/users/<%= user.id %>"><img src="/<%= user.image %>" width="300" alt=""></a>
             <div class="">
                 <p class=""> <%= user.firstName %> <%= user.lastName %> | <%= user.email %> | <%= user.userName %> | <%= user.birthDate %> | <%= user.country %> | <%= user.city %> | <%= user.image %> </p>
+                <form action="/users/borrardb?m=DELETE" method="post">
+                    <input type="hidden" name="id" value="<%= user.id %>">
+                    <button class="borrar" type="submit"><i class="fas fa-trash-alt"> Borrar usuario</i></button>
+                </form>
+                <a class="editar" href="/users/edit/<%= user.id %>">
+                    <button class="borrar" type="button"><i class="fas fa-trash-alt">Editar</i></button>
+                </a>
             </div>
         </div>
 

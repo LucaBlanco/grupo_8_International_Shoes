@@ -61,7 +61,16 @@ const users = {
             res.send("ok, aca renderizaría el perfil")
         )
     },
-
+    deletedb: (req, res) =>{
+        db.Users.destroy({
+            where: {
+                id: req.body.id
+            }
+        })
+        .then(
+            res.redirect('list')
+        )
+    },
     //with JSON
     auth:(req, res) =>{
         let userToLogin = match('email', req.body.user);

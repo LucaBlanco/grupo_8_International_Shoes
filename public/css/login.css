@@ -11,7 +11,7 @@ main {
 body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #000000,#700600,#B00900,#B01244,#D60B00, #FFF);
+    background: linear-gradient(to right, #d9a4a4,#bd8b88,#B00900,#B01244,#c9807c, #d9a4a4);
     height: 100vh;
   /*  overflow: hidden; */
   /*  background-color: whitesmoke; */

@@ -16,6 +16,13 @@
           <h1><%= user.first_name %> <%= user.last_name %></h1>
           <p class="title"> <%= user.email %> </p>
           <p><%= user.category %></p>
+          <form action="/users/borrardb?m=DELETE" method="post">
+            <input type="hidden" name="id" value="<%= user.id %>">
+            <button class="borrar" type="submit"><i class="fas fa-trash-alt"> Borrar</i></button>
+          </form>
+          <a class="editar" href="/users/edit/<%= user.id %>">
+            <button class="borrar" type="button"><i class="fas fa-trash-alt">Editar</i></button>
+          </a>
         </div>
       <% } %>
 
