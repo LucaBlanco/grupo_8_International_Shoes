@@ -1,15 +1,11 @@
 const session = require('express-session');
-const fs= require('fs');
-const path= require('path');
 const bcryptjs = require('bcryptjs');
-const{write,list,all,find, match, create,generate,update,garbage}=require('../models/users');
-
 const db = require('../database/models');
+const controller = require('./products');
 
 const users = {   
     login: (req, res) => res.render('user/login'),
     registro: (req, res) => res.render('user/registro'),
-    //with DB
     listFromDb: (req, res) => {
         db.Users.findAll()
             .then(function(users) {
@@ -17,6 +13,9 @@ const users = {
             })
     },
     createDb: (req, res) => {
+        if(req.file){
+            req.body.image = req.file.filename;
+        }
         db.Users.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -29,7 +28,9 @@ const users = {
             city: req.body.city,
             address: req.body.address,
             image: req.body.image
-        })
+        }).then(
+            res.send("ok, aca renderizaría el perfil")
+        )
     },
     editDb: (req, res) => {
         db.Users.findByPk(req.params.id)
@@ -58,7 +59,7 @@ const users = {
             where: {id: req.params.id}
         }
         ).then(
-            res.send("ok, aca renderizaría el perfil")
+            res.redirect('/list')
         )
     },
     deletedb: (req, res) =>{
@@ -68,14 +69,23 @@ const users = {
             }
         })
         .then(
+            controller.logout
+        )
+        .then(
             res.redirect('list')
         )
     },
-    //with JSON
-    auth:(req, res) =>{
-        let userToLogin = match('email', req.body.user);
+
+    auth: async (req, res) =>{
+        let userToLogin;
+        try {
+            userToLogin = await db.Users.findOne({ where: { email: req.body.user } })
+        }catch (error) {
+            console.error('Error:', error);
+        }
         if(userToLogin){
             let pwdOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            console.log("pwdOk = "+pwdOk);
             if(pwdOk){
                 delete userToLogin.password;
                 req.session.usuarioLogueado = userToLogin;

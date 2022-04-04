@@ -1,7 +1,6 @@
 const{write,list,all,find,create,generate,update,garbage, match}=require('../models/users');
 
 const controller={
-    index:(req,res)=>res.render('user/registro'),
     deposit:(req,res)=> {
         let userExist = match('email', req.body.email);
         console.log(userExist);

@@ -13,27 +13,27 @@
             <% if (locals.errors && errors.registro) { %>
                 <div class="alert" ><%= errors.registro.msg %> </div>
             <% } %>
-            <form action="/registro/guardar" method="POST" enctype="multipart/form-data">
-                <input class="registro" type="text" name="first_name" placeholder="NOMBRES">
-                <input  class="registro" type="text" name="last_name" placeholder="APELLIDOS">
-                <input class="registro"  type="text" name="user" placeholder="NOMBRE DE USUARIO">
+            <form action="/registro/guardardb" method="POST" enctype="multipart/form-data">
+                <input class="registro" type="text" name="firstName" placeholder="NOMBRES">
+                <input  class="registro" type="text" name="lastName" placeholder="APELLIDOS">
+                <input class="registro"  type="text" name="userName" placeholder="NOMBRE DE USUARIO">
                 <input  class="registro" type="email" name="email" placeholder="E-MAIL">
                 <br>
                 <label for="birth_date"><b>FECHA DE NACIMIENTO</b></label>
                 <br>
-                <input  class="registro" type="date" name="date_of_birth" id="birth_date">
+                <input  class="registro" type="date" name="birthDate" id="birth_date">
                 <br>
                 <input  class="registro" type="text" name="country" placeholder="PAIS">
                 <input  class="registro" type="text" name="province" placeholder="PROVINCIA">
                 <input  class="registro" type="text" name="city" placeholder="CIUDAD">
-                <input  class="registro" type="text" name="addres" placeholder="DOMICILIO">
+                <input  class="registro" type="text" name="address" placeholder="DOMICILIO">
                         
                 <h4>ELEGÍ TU FOTO DE PERFIL</h4>
                 <input  type="file" name="image">
                 <br>
                 <br>
                 <input  class="registro" type="password" name="password" placeholder="Elegí tu contraseña">
-                <input  class="registro" type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+                <input  class="registro" type="password" name="password_confirm" placeholder="Confirmá tu contraseña">
                 <br>
                 <br>
                 <input class="boton"  type="submit" value="Registrarme">

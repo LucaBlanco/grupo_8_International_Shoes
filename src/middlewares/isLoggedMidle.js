@@ -1,10 +1,16 @@
-const User = require('../models/users');
+const db = require('../database/models');
 
-function isLoggedMidle(req, res, next) {
+async function isLoggedMidle(req, res, next) {
     res.locals.isLogged = false;
-
+    let userFromCookie;
     let emailCookie = req.cookies.userEmail;
-    let userFromCookie = User.match('email', emailCookie); 
+    if (emailCookie) {
+        try {
+            userFromCookie = await db.Users.findOne({ where: { email: emailCookie } })
+        }catch (error) {
+            console.error('Error:', error);
+        }   
+    }    
     if (userFromCookie) {
         req.session.usuarioLogueado = userFromCookie;        
     }       
