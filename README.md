@@ -9,3 +9,9 @@ INTEGRANTES:
     Lucas Muñoz
     Juan Fernandez
     Luca Blanco
+
+
+Dentro de src\database\migrations\ encontrará los archivos sql para crear y añadir datos de prueba
+Usuario y contraseña de pruebas:
+juanmfernandez@nn.com
+0303456

@@ -7,10 +7,18 @@
   <div>
   <%- include("../partials/nav") %>
 </div>
-  <main>
+  <main class="login" >
     <section id="login">   
     <div class="center">
       <h1>Acceso</h1>
+          <span>
+            <% if (locals.errors && errors.email) { %>
+              <div class="alert" ><%= errors.email.msg %> </div>
+             <% } %>
+             <% if (locals.errors && errors.registro) { %>
+              <div class="alert" ><%= errors.registro.msg %> </div>
+            <% } %>
+          </span>      
       <form action="/users/auth" method="post">
         <div class="texto">
           <input method="post" type="text" name="user" required>
@@ -19,11 +27,7 @@
         </div>
         <div class="texto">
           <input method="post" type="password" name="password" required>
-          <span>
-            <% if (locals.errors && errors.email) { %>
-              <div class="alert" ><%= errors.email.msg %> </div>
-             <% } %>
-          </span>
+
           <label>Contraseña</label>
         </div>
         <input type="checkbox" name="remember_user" id="remember_user"><label> Recordar</label>

@@ -1,14 +1,18 @@
 <header>
     <nav>
         <ul>
-            <section class="logo"><img src="/imagenes/Crop_brand.svg" alt=""></section>
+            <section class="logo">
+                <a href="/">
+                    <img src="/imagenes/Crop_brand.svg" alt="">
+                </a>
+            </section>
             <li class="btn"><span class="fas fa-bars"></span></li>
             <div class="items">
                 <li><a href="/productos/">PRODUCTOS</a></li>
-                <!--<li><a href="#">ENVIOS</a></li>-->
+                <li><a href="/users/">Usuarios</a></li>
+
                 <li><a href="/productos/nuevo">Nuevo producto</a></li>
                 <li><a href="/productos/carrito">Carrito <i class="fas fa-shopping-cart"></i> </a></li>
-                <!--<li><a href="#">CONTACTO</a></li>-->
 
                 <% if (locals.isLogged) { %>
                     <li><a href="/users/perfil">¡Hola <%= locals.usuarioLogueado.first_name %>! </a></li>
@@ -21,8 +25,8 @@
 
             </div>
             <form class=formulario action="/productos/" method="get">
-                <input type="text" name="search" id="search" placeholder="Búsqueda por marca">
-                <button type="submit" id="buscar">Buscar <span class="fas fa-search"></span> </button>
+                <input class="search-input" type="text" name="search" id="search" placeholder="Búsqueda por marca">
+                <button class="search-btn" type="submit" id="buscar">Buscar <span class="fas fa-search"></span> </button>
             </form>
     </nav>
 </header>

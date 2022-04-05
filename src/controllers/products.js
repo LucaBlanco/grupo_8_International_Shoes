@@ -29,11 +29,18 @@ const controller = {
             res.redirect('listadodb')
         )
     },
-    editDb: (req, res) => {
-        db.Products.findByPk(req.params.id)
-            .then(function(producto){
-                res.render('product/productEdit', {producto:producto});
-            })
+    editDb: async (req, res) => {
+        let productToEdit;
+        try {
+            productToEdit = await db.Products.findByPk(req.params.id)
+        }catch (error) {
+            res.render('error', {error:error})
+        }
+        if(productToEdit){
+            res.render('product/productEdit', {producto:productToEdit});
+        }else{
+            res.render('error', {error:"No se encontró el producto"})
+        }
     },
     updateDb: (req, res) => {
         if(req.file){

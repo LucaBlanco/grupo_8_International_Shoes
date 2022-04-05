@@ -12,31 +12,18 @@ const users = {
                 res.render('user/list', { users: users })
             })
     },
-    createDb: (req, res) => {
-        if(req.file){
-            req.body.image = req.file.filename;
+    editDb: async (req, res) => {
+        let userToEdit;
+        try {
+            userToEdit = await db.Users.findByPk(req.params.id)
+        }catch (error) {
+            res.render('error', {error:error})
         }
-        db.Users.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            userName: req.body.userName,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            birthDate: req.body.birthDate,
-            country: req.body.country,
-            province: req.body.province,
-            city: req.body.city,
-            address: req.body.address,
-            image: req.body.image
-        }).then(
-            res.send("ok, aca renderizaría el perfil")
-        )
-    },
-    editDb: (req, res) => {
-        db.Users.findByPk(req.params.id)
-            .then(function(user){
-                res.render('user/userEdit', {user:user});
-            })
+        if(userToEdit){
+            res.render('user/userEdit', {user:userToEdit});
+        }else{
+            res.render('error', {error:"No se encontró el usuario"})
+        }
     },
     updateDb: (req, res) => {
         if(req.file){
@@ -75,7 +62,6 @@ const users = {
             res.redirect('list')
         )
     },
-
     auth: async (req, res) =>{
         let userToLogin;
         try {
@@ -83,6 +69,7 @@ const users = {
         }catch (error) {
             console.error('Error:', error);
         }
+        //console.error(bcryptjs.hashSync(req.body.password, 10));
         if(userToLogin){
             let pwdOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
             console.log("pwdOk = "+pwdOk);
@@ -114,6 +101,49 @@ const users = {
         res.render('user/profile', {
             user: req.session.usuarioLogueado
         });
+    },
+    createUser: async (req,res)=> {
+        let userExist; 
+        try {
+            userExist = await db.Users.findOne({ where: { email: req.body.email } })
+        }catch (error) {
+            console.error('Error:', error);
+        }
+        if (userExist) {
+            return res.render('user/registro', {
+                errors: {
+                    registro:{
+                        msg: "Email ya registrado"
+                    }
+                }
+            });
+        }else{
+            if(req.file){
+                req.body.image = req.file.filename;
+            }
+            db.Users.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                userName: req.body.userName,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                birthDate: req.body.birthDate,
+                country: req.body.country,
+                province: req.body.province,
+                city: req.body.city,
+                address: req.body.address,
+                image: req.body.image
+            }).then(
+                res.render('user/login', {
+                    errors: {
+                        registro:{
+                            msg: "Te has registrado correctamente, ya puedes iniciar sesión"
+                        }
+                    }
+                })
+            )
+        }
+
     }
 }
 

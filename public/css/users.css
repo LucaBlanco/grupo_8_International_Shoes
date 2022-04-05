@@ -8,11 +8,12 @@
     border-radius: 5px;
   }
   
-  .title {
-    color: grey;
-    font-size: 18px;
-  }
-  
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+/*cosas genericas que despues no se sabe a cuantas otras cosas afectan, usemos clases!*/
 button {
   border: none;
   outline: 0;

@@ -39,13 +39,45 @@ nav{
 
 nav ul{
   display: flex;
- /*  margin-right: 10%; */
-  list-style: none; 
+  list-style: none;
   box-sizing: border-box;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-evenly;
   flex-wrap: nowrap;
   align-content: center;
+  align-items: center;
+}
+.search-btn {
+  width: 90px;
+  margin-left: -1px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  outline: 0;
+  display: inline-block;
+  padding: 3px 7px 7px 5px;
+  margin: 0;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.search-input {
+  height: 34px;
+  border-radius: 4px 0 0 4px;
+  margin-right: -3px;
+  border: 1px solid black;
+  text-align: center;
+  font: 15px Arial, sans-serif;
+  color: #000;
+}
+.search-input:focus {
+  border-radius: 4px 0 0 4px;
+  margin-right: -3px;
+  border: 1px solid black;
+  text-align: center;
+  font: 15px Arial, sans-serif;
+  color: #000;
 }
 
 nav ul li.logo{
@@ -213,4 +245,3 @@ nav ul li.btn span.show:before{
     font-weight: 600;
     color: #202020;
   }
-  
