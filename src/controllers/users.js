@@ -1,5 +1,6 @@
 const session = require('express-session');
 const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const controller = require('./products');
 
@@ -69,10 +70,8 @@ const users = {
         }catch (error) {
             console.error('Error:', error);
         }
-        //console.error(bcryptjs.hashSync(req.body.password, 10));
         if(userToLogin){
             let pwdOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            console.log("pwdOk = "+pwdOk);
             if(pwdOk){
                 delete userToLogin.password;
                 req.session.usuarioLogueado = userToLogin;
@@ -103,7 +102,22 @@ const users = {
         });
     },
     createUser: async (req,res)=> {
+        if(req.file){
+            req.body.image = req.file.filename;
+        }
+        let errors = validationResult(req);
         let userExist; 
+        if (!errors.isEmpty()) {
+
+            console.log('body:', req.body);
+            console.log('Error:', errors);
+            console.log('req.file:', req.file);
+
+            return res.render('user/registro', { 
+                errors: errors.array(),
+                old: req.body
+            });
+        }
         try {
             userExist = await db.Users.findOne({ where: { email: req.body.email } })
         }catch (error) {
@@ -111,11 +125,12 @@ const users = {
         }
         if (userExist) {
             return res.render('user/registro', {
-                errors: {
+                emailExist: {
                     registro:{
                         msg: "Email ya registrado"
                     }
-                }
+                },
+                old: req.body
             });
         }else{
             if(req.file){

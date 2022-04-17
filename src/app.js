@@ -11,7 +11,6 @@ const isLoggedMidle = require('./middlewares/isLoggedMidle');
 const publicPath= resolve(__dirname,'../public');
 app.use( express.static(publicPath) );
 
-
 app.use(session({
     secret: 't[%H+>mg`GKDG4F$',
     resave: false,

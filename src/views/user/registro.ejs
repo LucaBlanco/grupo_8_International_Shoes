@@ -10,23 +10,31 @@
     <main class="register">
         <div class="center">
             <h1>Registro</h1>
-            <% if (locals.errors && errors.registro) { %>
-                <div class="alert" ><%= errors.registro.msg %> </div>
+            <% if (locals.emailExist && emailExist.registro) { %>
+                <div class="alert" ><%= emailExist.registro.msg %> </div>
             <% } %>
+            <% if (locals.errors) { %>
+                <div class="alert" >
+                    <% errors.forEach( error => { %> 
+                        <p><%= error.msg %></p>
+                    <% } ) %>
+                </div>
+            <% } %>
+
             <form action="/registro/guardardb" method="POST" enctype="multipart/form-data">
-                <input class="registro" type="text" name="firstName" placeholder="NOMBRES">
-                <input  class="registro" type="text" name="lastName" placeholder="APELLIDOS">
-                <input class="registro"  type="text" name="userName" placeholder="NOMBRE DE USUARIO">
-                <input  class="registro" type="email" name="email" placeholder="E-MAIL">
+                <input class="registro" type="text" name="firstName" placeholder="NOMBRES" value="<%= locals.old && old.firstName ? old.firstName : ''%>">
+                <input  class="registro" type="text" name="lastName" placeholder="APELLIDOS" value="<%= locals.old && old.lastName ? old.lastName : ''%>">
+                <input class="registro"  type="text" name="userName" placeholder="NOMBRE DE USUARIO" value="<%= locals.old && old.userName ? old.userName : ''%>">
+                <input  class="registro" type="email" name="email" placeholder="E-MAIL" value="<%= locals.old && old.email ? old.email : ''%>">
                 <br>
                 <label for="birth_date"><b>FECHA DE NACIMIENTO</b></label>
                 <br>
-                <input  class="registro" type="date" name="birthDate" id="birth_date">
+                <input  class="registro" type="date" name="birthDate" id="birth_date" value="<%= locals.old && old.birthDate ? old.birthDate : ''%>">
                 <br>
-                <input  class="registro" type="text" name="country" placeholder="PAIS">
-                <input  class="registro" type="text" name="province" placeholder="PROVINCIA">
-                <input  class="registro" type="text" name="city" placeholder="CIUDAD">
-                <input  class="registro" type="text" name="address" placeholder="DOMICILIO">
+                <input  class="registro" type="text" name="country" placeholder="PAIS" value="<%= locals.old && old.country ? old.country : ''%>">
+                <input  class="registro" type="text" name="province" placeholder="PROVINCIA" value="<%= locals.old && old.province ? old.province : ''%>">
+                <input  class="registro" type="text" name="city" placeholder="CIUDAD" value="<%= locals.old && old.city ? old.city : ''%>">
+                <input  class="registro" type="text" name="address" placeholder="DOMICILIO" value="<%= locals.old && old.address ? old.address : ''%>">
                         
                 <h4>ELEGÍ TU FOTO DE PERFIL</h4>
                 <input  type="file" name="image">
