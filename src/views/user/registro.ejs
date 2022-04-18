@@ -23,6 +23,7 @@
 
             <form action="/registro/guardardb" id="register" method="POST" enctype="multipart/form-data">
                 <input class="registro" type="text" id="firstName" name="firstName" placeholder="NOMBRES" value="<%= locals.old && old.firstName ? old.firstName : ''%>">
+                <p id="errorName" class="alert" ></p>
                 <input  class="registro" type="text" name="lastName" placeholder="APELLIDOS" value="<%= locals.old && old.lastName ? old.lastName : ''%>">
                 <input class="registro"  type="text" name="userName" placeholder="NOMBRE DE USUARIO" value="<%= locals.old && old.userName ? old.userName : ''%>">
                 <input  class="registro" type="email" id="email" name="email" placeholder="E-MAIL" value="<%= locals.old && old.email ? old.email : ''%>">
@@ -38,11 +39,14 @@
                 <input  class="registro" type="text" name="address" placeholder="DOMICILIO" value="<%= locals.old && old.address ? old.address : ''%>">
                         
                 <h4>ELEGÍ TU FOTO DE PERFIL</h4>
-                <input  type="file" name="image">
+                <input  type="file" id="image" name="image">
+                <p id="errorImage" class="alert" ></p>
                 <br>
                 <br>
                 <input  class="registro" type="password" id="password" name="password" placeholder="Elegí tu contraseña">
+                <p id="errorPassword" class="alert" ></p>
                 <input  class="registro" type="password" name="password_confirm" placeholder="Confirmá tu contraseña">
+                <p id="errorPassword" class="alert" ></p>
                 <br>
                 <br>
                 <input class="boton"  type="submit" value="Registrarme">
