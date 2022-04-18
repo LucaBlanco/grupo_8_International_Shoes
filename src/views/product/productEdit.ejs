@@ -6,12 +6,21 @@
 <main class="edit-product">
     <div class="center">
     <h1>Editar un producto</h1>
+
+    <% if (locals.errors) { %>
+        <div class="alert" >
+            <% errors.forEach( error => { %> 
+                <p><%= error.msg %></p>
+            <% } ) %>
+        </div>
+    <% } %>
+
     <form action="/productos/update?m=PUT" enctype="multipart/form-data" method="POST">
-        <input type="hidden" name="id"  value="<%= producto.id %>">
+        <input type="hidden" name="id"  value="<%= locals.old && old.id ? old.id : producto.id %>">
         <fieldset>
             <label for="marca">Marca</label>
             <select name="marca" id="marca">
-                <option value="<%= producto.marca %>" selected><%= producto.marca %></option>
+                <option value="<%= producto.marca %>" selected><%= locals.old && old.marca ? old.marca :  producto.marca %></option>
                 <option value="Louis Vuitton">Louis Vuitton</option>
                 <option value="Adidas">Adidas</option>
                 <option value="Nike">Nike</option>
@@ -21,11 +30,11 @@
         </fieldset>
         <fieldset>
             <label for="nombre">Nombre/Modelo</label>
-                <input type="text" name="nombre" id="nombre" value="<%= producto.nombre %>">
+                <input type="text" name="nombre" id="nombre" value="<%= locals.old && old.nombre ? old.nombre : producto.nombre %>">
         </fieldset>
         <fieldset>
             <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" id="" cols="30" rows="10" id="descripcion"><%= producto.descripcion %></textarea>
+                <textarea name="descripcion" id="" cols="30" rows="10" id="descripcion"><%= locals.old && old.descripcion ? old.descripcion : producto.descripcion %></textarea>
         </fieldset>
 
         <fieldset>
@@ -43,10 +52,10 @@
         </fieldset>
         <fieldset>
             <label for="precio">Precio</label>
-                <input type="number" name="precio" id="precio" value="<%= producto.precio %>">
+                <input type="number" name="precio" id="precio" value="<%= locals.old && old.precio ? old.precio : producto.precio %>">
         </fieldset>
         <fieldset><label for="stock">Stock</label>
-            <input type="range" name="stock" id="stock" min="1" max="20" step="1" value="<%= producto.stock %>"
+            <input type="range" name="stock" id="stock" min="1" max="20" step="1" value="<%= locals.old && old.stock ? old.stock : producto.stock %>"
                 oninput="document.getElementById('tStock').innerHTML = this.value" />
             <label id="tStock"><%= producto.stock %></label>
         </fieldset>

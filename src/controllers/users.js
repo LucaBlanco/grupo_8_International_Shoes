@@ -64,6 +64,16 @@ const users = {
         )
     },
     auth: async (req, res) =>{
+
+        let error = validationResult(req);
+        let userExist; 
+        if (!error.isEmpty()) {
+            return res.render('user/login', { 
+                error: error.array(),
+                old: req.body
+            });
+        }       
+
         let userToLogin;
         try {
             userToLogin = await db.Users.findOne({ where: { email: req.body.user } })
@@ -88,7 +98,8 @@ const users = {
                 email:{
                     msg: "Credenciales invalidas"
                 }
-            }
+            },
+            old: req.body
         })
     },
     logout: (req, res) => {
@@ -101,6 +112,20 @@ const users = {
             user: req.session.usuarioLogueado
         });
     },
+    emailExist: async (req,res)=> {
+        let userExist;
+        try {
+            userExist = await db.Users.findOne({ where: { email: req.body.email } })
+        }catch (error) {
+            console.error('Error:', error);
+        }
+        //console.error('body:', req.body.email);
+        if(userExist){
+            res.json({exist:"yes"})
+        }else{
+            res.json({exist:"no"})
+        }
+    },
     createUser: async (req,res)=> {
         if(req.file){
             req.body.image = req.file.filename;
@@ -108,11 +133,11 @@ const users = {
         let errors = validationResult(req);
         let userExist; 
         if (!errors.isEmpty()) {
-
+            /*
             console.log('body:', req.body);
             console.log('Error:', errors);
             console.log('req.file:', req.file);
-
+            */
             return res.render('user/registro', { 
                 errors: errors.array(),
                 old: req.body

@@ -7,6 +7,13 @@
 <main class="add">
     <div class="center">
         <h1>Crear un producto</h1>
+        <% if (locals.errors) { %>
+            <div class="alert" >
+                <% errors.forEach( error => { %> 
+                    <p><%= error.msg %></p>
+                <% } ) %>
+            </div>
+        <% } %>
         <form action="/productos/guardar" enctype="multipart/form-data" method="POST">
             <fieldset>
                 <label for="marca">Marca</label>

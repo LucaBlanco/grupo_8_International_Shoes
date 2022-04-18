@@ -18,16 +18,22 @@
              <% if (locals.errors && errors.registro) { %>
               <div class="alert" ><%= errors.registro.msg %> </div>
             <% } %>
+            <% if (locals.error) { %>
+              <div class="alert" >
+                  <% error.forEach( err => { %> 
+                      <p><%= err.msg %></p>
+                  <% } ) %>
+              </div>
+          <% } %>
           </span>      
       <form action="/users/auth" method="post">
         <div class="texto">
-          <input method="post" type="text" name="user" required>
+          <input type="text" name="user" value="<%= locals.old && old.user ? old.user : ''%>" required>
           <span></span>
           <label>Usuario</label>
         </div>
         <div class="texto">
-          <input method="post" type="password" name="password" required>
-
+          <input type="password" name="password" value="<%= locals.old && old.password ? old.password : ''%>" required>
           <label>Contraseña</label>
         </div>
         <input type="checkbox" name="remember_user" id="remember_user"><label> Recordar</label>

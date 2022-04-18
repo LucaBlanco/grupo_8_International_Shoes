@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
 const controller = {
@@ -17,6 +18,19 @@ const controller = {
         if(req.file){
             req.body.imagen = req.file.filename;
         }
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+
+            console.log('body:', req.body);
+            console.log('Error:', errors);
+            console.log('req.file:', req.file);
+
+            return res.render('product/crear', { 
+                errors: errors.array(),
+                old: req.body
+            });
+        }
+
         db.Products.create({
             marca: req.body.marca,
             nombre: req.body.nombre,
@@ -45,8 +59,22 @@ const controller = {
     updateDb: (req, res) => {
         if(req.file){
             req.body.imagen = req.file.filename;
-            console.log(req.file.filename);
         }
+
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+
+            //console.log('body:', req.body);
+            //console.log('Error:', errors);
+            //console.log('req.file:', req.file);
+
+            return res.render('product/productEdit', { 
+                errors: errors.array(),
+                old: req.body,
+                producto: req.body
+            });
+        }
+
         db.Products.update({
             marca: req.body.marca,
             nombre: req.body.nombre,
