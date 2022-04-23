@@ -15,7 +15,7 @@
         </div>
     <% } %>
 
-    <form action="/productos/update?m=PUT" enctype="multipart/form-data" method="POST">
+    <form action="/productos/update?m=PUT" id="createOrEdit" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="id"  value="<%= locals.old && old.id ? old.id : producto.id %>">
         <fieldset>
             <label for="marca">Marca</label>
@@ -31,10 +31,12 @@
         <fieldset>
             <label for="nombre">Nombre/Modelo</label>
                 <input type="text" name="nombre" id="nombre" value="<%= locals.old && old.nombre ? old.nombre : producto.nombre %>">
+                <p id="errorName" class="alert" ></p>
         </fieldset>
         <fieldset>
             <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" id="" cols="30" rows="10" id="descripcion"><%= locals.old && old.descripcion ? old.descripcion : producto.descripcion %></textarea>
+                <textarea name="descripcion" cols="30" rows="10" id="descripcion"><%= locals.old && old.descripcion ? old.descripcion : producto.descripcion %></textarea>
+                <p id="errorDesc" class="alert" ></p>
         </fieldset>
 
         <fieldset>
@@ -61,6 +63,7 @@
         </fieldset>
         <fieldset><label for="imagen">Imagen</label>
             <input type="file" name="imagen" id="imagen" value="<%= producto.image %>" >
+            <p id="errorImage" class="alert" ></p>
         </fieldset>
         <fieldset>
             <button class="btn-submit" type="submit">Actualizar producto</button>

@@ -26,15 +26,15 @@
               </div>
           <% } %>
           </span>      
-      <form action="/users/auth" method="post">
+      <form action="/users/auth" id="login" method="post">
         <div class="texto">
-          <input type="text" name="user" id="email" value="<%= locals.old && old.user ? old.user : ''%>" required>
+          <input type="text" name="user" id="email" value="<%= locals.old && old.user ? old.user : ''%>" >
           <p id="errorMail" class="alert" ></p>
           <span></span>
           <label>Usuario</label>
         </div>
         <div class="texto">
-          <input type="password" name="password" id="password"  value="<%= locals.old && old.password ? old.password : ''%>" required>
+          <input type="password" name="password" id="password"  value="<%= locals.old && old.password ? old.password : ''%>" >
           <label>Contraseña</label>
           <p id="errorPassword" class="alert" ></p>
         </div>

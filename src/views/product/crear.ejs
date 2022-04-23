@@ -14,7 +14,7 @@
                 <% } ) %>
             </div>
         <% } %>
-        <form action="/productos/guardar" enctype="multipart/form-data" method="POST">
+        <form action="/productos/guardar" id="createOrEdit" enctype="multipart/form-data" method="POST">
             <fieldset>
                 <label for="marca">Marca</label>
                 <select name="marca" id="marca">
@@ -28,10 +28,12 @@
             <fieldset class="field_flex">
                 <label for="nombre">Nombre/Modelo</label>
                     <input type="text" name="nombre" class="input_modelo" id="nombre">
+                    <p id="errorName" class="alert" ></p>
             </fieldset>
             <fieldset>
                 <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="" cols="30" rows="10" id="descripcion"></textarea>
+                    <textarea name="descripcion" cols="30" rows="10" id="descripcion"></textarea>
+                    <p id="errorDesc" class="alert" ></p>
             </fieldset>
 
             <fieldset>
@@ -57,8 +59,10 @@
                     oninput="document.getElementById('tStock').innerHTML = this.value" />
                 <label id="tStock"></label>
             </fieldset>
-            <fieldset class="field_flex"><label for="imagen">Imagen</label>
+            <fieldset class="field_flex">
+                <label for="imagen">Imagen</label>
                 <input type="file" name="imagen" class="input_modelo" id="imagen"/>
+                <p id="errorImage" class="alert" ></p>
             </fieldset>
             <fieldset>
                 <br>

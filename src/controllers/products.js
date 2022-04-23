@@ -27,7 +27,8 @@ const controller = {
 
             return res.render('product/crear', { 
                 errors: errors.array(),
-                old: req.body
+                old: req.body,
+                formType: "create"
             });
         }
 
@@ -51,7 +52,7 @@ const controller = {
             res.render('error', {error:error})
         }
         if(productToEdit){
-            res.render('product/productEdit', {producto:productToEdit});
+            res.render('product/productEdit', {producto:productToEdit, formType : "create"});
         }else{
             res.render('error', {error:"No se encontró el producto"})
         }
@@ -71,7 +72,8 @@ const controller = {
             return res.render('product/productEdit', { 
                 errors: errors.array(),
                 old: req.body,
-                producto: req.body
+                producto: req.body,
+                formType : "create"
             });
         }
 
@@ -103,7 +105,7 @@ const controller = {
     },
 
     //json
-    nuevo: (req, res) => res.render('product/crear', {title: 'Crear'}),
+    nuevo: (req, res) => res.render('product/crear', {title: 'Crear', formType: "create"}),
     carrito:(req, res) => {
         res.render('product/carrito')
     }
