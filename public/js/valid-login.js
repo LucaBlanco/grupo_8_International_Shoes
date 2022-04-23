@@ -2,18 +2,24 @@ window.addEventListener("load", function(){
     let nameInput = document.querySelector("#firstName");
     let emailInput = document.querySelector("#email");
     let passwordInput = document.querySelector("#password");
-    let imageInput = document.querySelector("#image");
+    let imageInput = document.querySelector("#image");    
+    let imageType;
+    let allowedImageTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
     let validForm = false;
+    if (imageInput && imageInput.files[0] === undefined) {
+        imageType = undefined;        
+    }
+
+    console.log("Se han completado las declaraciones");
     
     imageInput.addEventListener("change", function(){
-        var type = imageInput.files[0].type;
-        if(validator.isMimeType(type) && validator.isIn(type, ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'])){
-            console.log(type + " es un mimetype aceptado");  
+        imageType = imageInput.files[0].type;
+        console.log(imageType)
+        if(validator.isMimeType(imageType) && validator.isIn(imageType, allowedImageTypes)){
             imageInput.classList.remove("registro-invalido");
             imageInput.classList.add("registro");
             document.querySelector("#errorImage").innerHTML = "";   
         }else{
-            console.log(type + " NO es un mimetype aceptado");
             imageInput.classList.remove("registro");
             imageInput.classList.add("registro-invalido");
             document.querySelector("#errorImage").innerHTML = "La imagen debe ser JPG, JPEG, PNG o GIF.";   
@@ -21,7 +27,6 @@ window.addEventListener("load", function(){
     })
     nameInput.addEventListener("blur", function(){
         validForm = validator.isLength(nameInput.value, {min:2, max: undefined});
-        console.log(validForm)
         if (validForm == false) {
             nameInput.classList.remove("registro");
             nameInput.classList.add("registro-invalido");
@@ -32,37 +37,43 @@ window.addEventListener("load", function(){
             document.querySelector("#errorName").innerHTML = ""; 
         }
     })
+
+    function isEmailRegistered(email) {
+        let body = 'email='+emailInput.value;
+        let settings = {
+            "method": "POST",
+            "headers": {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            "body": body
+        }
+        fetch("/users/api", settings)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                //console.log(data)
+                if(data.exist == "yes"){
+                    document.querySelector("#errorMail").innerHTML = "Email ya registrado";
+                    emailInput.classList.remove("registro");
+                    emailInput.classList.add("registro-invalido");
+                }else{
+                    document.querySelector("#errorMail").innerHTML = "";
+                    emailInput.classList.remove("registro-invalido");
+                    emailInput.classList.add("registro");
+                }
+            })
+            .catch(function(error){
+                console.log("No se pudo validar email")
+            })  
+        //console.log(settings)        
+    }
+
     emailInput.addEventListener("blur", function(){
         validForm = validator.isEmail(emailInput.value);
         if(validForm == true){
-            let email = 'email='+emailInput.value;
-            let settings = {
-                "method": "POST",
-                "headers": {
-                    "content-type": "application/x-www-form-urlencoded"
-                },
-                "body": email
-            }
-            fetch("/users/api", settings)
-                .then(function(response){
-                    return response.json();
-                })
-                .then(function(data){
-                    console.log(data)
-                    if(data.exist == "yes"){
-                        document.querySelector("#errorMail").innerHTML = "Email ya registrado";
-                        emailInput.classList.remove("registro");
-                        emailInput.classList.add("registro-invalido");
-                    }else{
-                        document.querySelector("#errorMail").innerHTML = "";
-                        emailInput.classList.remove("registro-invalido");
-                        emailInput.classList.add("registro");
-                    }
-                })
-                .catch(function(error){
-                    console.log("No se pudo validad email")
-                })  
-            console.log(settings)            
+            let email = emailInput.value;
+            isEmailRegistered(email)
         }else{
             document.querySelector("#errorMail").innerHTML = "Debes ingresar un e-mail válido, ej. nn@mail.com";
             emailInput.classList.remove("registro");
@@ -71,9 +82,7 @@ window.addEventListener("load", function(){
 
     })
     passwordInput.addEventListener("blur", function(){
-        //console.log(validator.isStrongPassword(passwordInput.value));
         validForm = validator.isStrongPassword(passwordInput.value);
-        console.log(validForm)
         if (validForm == false) {
             passwordInput.classList.remove("registro");
             passwordInput.classList.add("registro-invalido");
@@ -88,9 +97,18 @@ window.addEventListener("load", function(){
 
     let form = document.querySelector("#register");
     form.addEventListener("submit", function(e){
-        if (validForm === false) {
-            e.preventDefault()
-        }        
+        if( validator.isLength(nameInput.value, {min:2, max: undefined}) 
+            && validator.isEmail(emailInput.value) && validator.isStrongPassword(passwordInput.value) 
+            && validator.isMimeType(imageType) 
+            && validator.isIn(imageType, allowedImageTypes))
+        {
+            console.log("Exito")
+        }else{
+            console.log(imageType);
+            console.log("Errores en formulario");
+            e.preventDefault();
+        }
+     
     })
 
 })

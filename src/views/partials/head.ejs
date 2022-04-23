@@ -19,5 +19,14 @@
     <link rel="stylesheet" href="/css/registro.css">
     <link rel="stylesheet" href="/css/users.css">
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-    <script type="text/javascript" src="/js/valid.js"></script>
+    <% if (formType && formType == "login") { %>
+        <script type="text/javascript" src="/js/valid-login.js"></script>
+    <% } %>
+    <% if (formType && formType == "register") { %>
+        <script type="text/javascript" src="/js/valid-register.js"></script>
+    <% } %>
+    <% if (formType && formType == "create") { %>
+        <script type="text/javascript" src="/js/valid-create.js"></script>
+    <% } %>
+    
 </head>

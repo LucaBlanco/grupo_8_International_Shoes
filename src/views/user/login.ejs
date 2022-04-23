@@ -28,13 +28,15 @@
           </span>      
       <form action="/users/auth" method="post">
         <div class="texto">
-          <input type="text" name="user" value="<%= locals.old && old.user ? old.user : ''%>" required>
+          <input type="text" name="user" id="email" value="<%= locals.old && old.user ? old.user : ''%>" required>
+          <p id="errorMail" class="alert" ></p>
           <span></span>
           <label>Usuario</label>
         </div>
         <div class="texto">
-          <input type="password" name="password" value="<%= locals.old && old.password ? old.password : ''%>" required>
+          <input type="password" name="password" id="password"  value="<%= locals.old && old.password ? old.password : ''%>" required>
           <label>Contraseña</label>
+          <p id="errorPassword" class="alert" ></p>
         </div>
         <input type="checkbox" name="remember_user" id="remember_user"><label> Recordar</label>
         <input type="submit" value="Login" method="get">

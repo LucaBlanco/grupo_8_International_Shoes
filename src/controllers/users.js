@@ -5,8 +5,8 @@ const db = require('../database/models');
 const controller = require('./products');
 
 const users = {   
-    login: (req, res) => res.render('user/login'),
-    registro: (req, res) => res.render('user/registro'),
+    login: (req, res) => res.render('user/login', {formType: "login"}),
+    registro: (req, res) => res.render('user/registro', {formType: "register"}),
     listFromDb: (req, res) => {
         db.Users.findAll()
             .then(function(users) {
@@ -70,7 +70,8 @@ const users = {
         if (!error.isEmpty()) {
             return res.render('user/login', { 
                 error: error.array(),
-                old: req.body
+                old: req.body,
+                formType: "login"
             });
         }       
 
@@ -99,7 +100,8 @@ const users = {
                     msg: "Credenciales invalidas"
                 }
             },
-            old: req.body
+            old: req.body,
+            formType: "login"
         })
     },
     logout: (req, res) => {
@@ -140,7 +142,8 @@ const users = {
             */
             return res.render('user/registro', { 
                 errors: errors.array(),
-                old: req.body
+                old: req.body,
+                formType: "register"
             });
         }
         try {
@@ -155,7 +158,8 @@ const users = {
                         msg: "Email ya registrado"
                     }
                 },
-                old: req.body
+                old: req.body,
+                formType: "register"
             });
         }else{
             if(req.file){
@@ -179,7 +183,8 @@ const users = {
                         registro:{
                             msg: "Te has registrado correctamente, ya puedes iniciar sesión"
                         }
-                    }
+                    },
+                    formType: "login"
                 })
             )
         }
