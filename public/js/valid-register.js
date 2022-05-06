@@ -39,34 +39,21 @@ window.addEventListener("load", function(){
     })
 
     function isEmailRegistered(email) {
-        let body = 'email='+emailInput.value;
-        let settings = {
-            "method": "POST",
-            "headers": {
-                "content-type": "application/x-www-form-urlencoded"
-            },
-            "body": body
-        }
-        fetch("/users/api", settings)
+        fetch("/api/users/"+emailInput.value)
             .then(function(response){
                 return response.json();
             })
             .then(function(data){
-                //console.log(data)
-                if(data.exist == "yes"){
-                    document.querySelector("#errorMail").innerHTML = "Email ya registrado";
-                    emailInput.classList.remove("registro");
-                    emailInput.classList.add("registro-invalido");
-                }else{
+                if(data.exist && data.exist == "no"){
                     document.querySelector("#errorMail").innerHTML = "";
                     emailInput.classList.remove("registro-invalido");
                     emailInput.classList.add("registro");
-                }
-            })
-            .catch(function(error){
-                console.log("No se pudo validar email")
-            })  
-        //console.log(settings)        
+                }else{
+                    document.querySelector("#errorMail").innerHTML = "Email ya registrado";
+                    emailInput.classList.remove("registro");
+                    emailInput.classList.add("registro-invalido");
+                }                
+            });
     }
 
     emailInput.addEventListener("blur", function(){

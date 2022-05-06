@@ -114,20 +114,19 @@ const users = {
             user: req.session.usuarioLogueado
         });
     },
-    emailExist: async (req,res)=> {
-        let userExist;
-        try {
-            userExist = await db.Users.findOne({ where: { email: req.body.email } })
-        }catch (error) {
-            console.error('Error:', error);
-        }
-        //console.error('body:', req.body.email);
-        if(userExist){
-            res.json({exist:"yes"})
-        }else{
-            res.json({exist:"no"})
-        }
-    },
+    // emailExist: async (req,res)=> {
+    //     let userExist;
+    //     try {
+    //         userExist = await db.Users.findOne({ where: { email: req.body.email } })
+    //     }catch (error) {
+    //         console.error('Error:', error);
+    //     }
+    //     if(userExist){
+    //         res.json({exist:"yes"})
+    //     }else{
+    //         res.json({exist:"no"})
+    //     }
+    // },
     createUser: async (req,res)=> {
         if(req.file){
             req.body.image = req.file.filename;

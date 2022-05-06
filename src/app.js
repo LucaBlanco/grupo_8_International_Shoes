@@ -33,6 +33,9 @@ app.listen(app.get('port'), () => console.log('App online => '+app.get('host')+'
 app.use(require('./routes/main'));
 app.use('/productos', require('./routes/product'));
 app.use('/users', require('./routes/users'));
+app.use('/api', require('./routes/api'));
+//app.use('/api', require('./routes/api'));
+
 app.get('/carrito',(req, res)=>{
     let rutaIndex = resolve('./src/views/product/carrito');
     res.render(rutaIndex);
