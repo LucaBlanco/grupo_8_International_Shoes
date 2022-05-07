@@ -5,20 +5,29 @@ const db = require('../database/models');
 const controller = require('./products');
 
 let fields =  ['id', 'firstName','lastName', 'email','userName', 'birthDate','country', 'province','city', 'address', 'image'];
+const getPagination = (page, size) => {
+    const limit = size ? +size : 10;
+    const offset = page ? page * limit : 0;
+    return { limit, offset };
+};
+const getPagingData = (count, page, limit) => {
+    const currentPage = page ? +page : 0;
+    const totalPages = Math.ceil(count / limit);
+    return { totalPages, currentPage };
+};
 
 const api = {   
     //users
-
     listUsers: async (req, res) => {
-        //let { offset, limit } = req.query ? req.query : {offset : "1", limit : "10"};
-        let offset = req.query.offset ? req.query.offset :"1";
-        let limit =  req.query.limit ? req.query.limit : "10";
-
+        const page = req.query.page ? req.query.page :"0";
+        const size =  req.query.size ? req.query.size : "10";
+        const { limit, offset } = getPagination(page, size);
         let {count, rows } = await db.Users.findAndCountAll({
             attributes: fields,
             offset: parseInt(offset), limit: parseInt(limit)
         });
-        res.json({ count, users : rows })
+        const { totalPages, currentPage } = getPagingData(count, page, limit) ;
+        res.json({ count, users : rows, totalPages, currentPage })
     },
     detailsUsers: async (req,res)=> {
         let user;
@@ -39,8 +48,14 @@ const api = {
 
     //products
     listProducts: async (req, res) => {
-        let {count, rows} = await db.Products.findAndCountAll();
-        res.json({ count, products : rows })
+        const page = req.query.page ? req.query.page :"0";
+        const size =  req.query.size ? req.query.size : "10";
+        const { limit, offset } = getPagination(page, size);
+        let {count, rows} = await db.Products.findAndCountAll({
+            offset: parseInt(offset), limit: parseInt(limit)
+        });
+        const { totalPages, currentPage } = getPagingData(count, page, limit) ;
+        res.json({ count, products : rows, totalPages, currentPage })
     },
     detailsProducts: (req, res) => {
         db.Products.findByPk(req.params.id)
