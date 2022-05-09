@@ -3,6 +3,7 @@ const { resolve } = require('path');
 const method = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const cors = require('cors');
 
 const app= express();
 
@@ -19,8 +20,9 @@ app.use(session({
 
 app.use(cookies());
 app.use(isLoggedMidle);
+app.use(cors());
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3030);
 app.set('host', process.env.HOST ||  process.env.CLIENT_URL || 'http://localhost');
 app.set('view engine', 'ejs');
 app.set('views',  resolve(__dirname, './views'));

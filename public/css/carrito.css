@@ -3,7 +3,7 @@
 .carrito{
     width: 100%;
     min-height: 100%;
-    background-color: white;
+    background-color: #b97676;
     padding: 30px;    
     display: flex;
     flex-direction: row;
@@ -15,12 +15,13 @@
 .items {
     display: grid;
 }
-
+.talle{
+    color: black;
+}
 .cantidad, .total{
     border: dashed 2px #DDDDDD;
     border-radius: 2px;
-    width: 65px;
-    height: 33px;
+    height: 36px;
 }
 .cantidad{
     height: 37px;
@@ -51,8 +52,9 @@
     margin-left: 0px;
 }
 .btn-subm-compra{
-    background-color: #F7F7F7;
+    background-color: #a37070;
     border: 2px solid #DCDCDC;
+    color: aqua;
     border-radius: 22px;
     width: 214px;
     height: 44px;
