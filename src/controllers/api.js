@@ -11,9 +11,12 @@ const getPagination = (page, size) => {
     return { limit, offset };
 };
 const getPagingData = (count, page, limit) => {
-    const currentPage = page ? +page : 0;
     const totalPages = Math.ceil(count / limit);
-    return { totalPages, currentPage };
+    page = Number(page);
+    const currentPage = page ? +page : 0;
+    const prevPage = page ? page - 1 : 0;
+    const nextPage = page<totalPages ? page + 1 : page - 1;    
+    return { totalPages, currentPage, nextPage, prevPage };
 };
 
 const api = {   
@@ -26,8 +29,8 @@ const api = {
             attributes: fields,
             offset: parseInt(offset), limit: parseInt(limit)
         });
-        const { totalPages, currentPage } = getPagingData(count, page, limit) ;
-        res.json({ count, users : rows, totalPages, currentPage })
+        const { totalPages, currentPage, nextPage, prevPage } = getPagingData(count, page, limit) ;
+        res.json({ count, users : rows, totalPages, currentPage, nextPage, prevPage })
     },
     detailsUsers: async (req,res)=> {
         let user;
