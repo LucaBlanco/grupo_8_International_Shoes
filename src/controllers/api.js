@@ -14,7 +14,7 @@ const getPagingData = (count, page, limit) => {
     const totalPages = Math.ceil(count / limit);
     page = Number(page);
     const currentPage = page ? +page : 0;
-    const prevPage = page ? page - 1 : 0;
+    const prevPage = page ? page - 1 : -1;
     const nextPage = page<totalPages ? page + 1 : page - 1;    
     return { totalPages, currentPage, nextPage, prevPage };
 };
@@ -57,8 +57,8 @@ const api = {
         let {count, rows} = await db.Products.findAndCountAll({
             offset: parseInt(offset), limit: parseInt(limit)
         });
-        const { totalPages, currentPage } = getPagingData(count, page, limit) ;
-        res.json({ count, products : rows, totalPages, currentPage })
+        const { totalPages, currentPage, nextPage, prevPage } = getPagingData(count, page, limit) ;
+        res.json({ count, products : rows, totalPages, currentPage, nextPage, prevPage })
     },
     detailsProducts: (req, res) => {
         db.Products.findByPk(req.params.id)
