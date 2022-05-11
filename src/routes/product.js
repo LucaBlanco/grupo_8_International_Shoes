@@ -3,7 +3,6 @@ const router = Router();
 const { body } = require('express-validator');
 const {nuevo, listFromDb,  editDb, updateDb, deletedb, createDb, detailsdb} = require('../controllers/products');
 const { listItem, addItem } = require('../controllers/carrito');
-const authMidle = require('../middlewares/authMidle')
 
 const createUpdateValidator = [
     body("nombre").notEmpty().isLength({ min: 5, max:65 }).withMessage('El nombre no puede estar vacío y debe tener al menos 5 caracteres.'),
@@ -23,7 +22,7 @@ router.get('/listadodb', listFromDb) //db
 router.post('/guardar', upload, createUpdateValidator, createDb); //db
 
 //db
-router.get('/edit/:id', authMidle, editDb) //db
+router.get('/edit/:id', editDb) //db
 router.put('/update', upload, createUpdateValidator, updateDb) //db
 
 router.get('/carrito', listItem) //db

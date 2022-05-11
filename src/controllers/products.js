@@ -58,35 +58,48 @@ const controller = {
         }
     },
     updateDb: (req, res) => {
-        if(req.file){
-            req.body.imagen = req.file.filename;
-        }
+        if (req.session.usuarioLogueado) {
+            if(req.file){
+                req.body.imagen = req.file.filename;
+            }
 
-        let errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.render('product/productEdit', { 
-                errors: errors.array(),
+            let errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.render('product/productEdit', { 
+                    errors: errors.array(),
+                    old: req.body,
+                    producto: req.body,
+                    formType : "create"
+                });
+            }
+
+            db.Products.update({
+                marca: req.body.marca,
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                precio: req.body.precio,
+                stock: req.body.stock,
+                talle: req.body.talle,
+                image: req.body.imagen
+            },
+            {
+                where: {id: req.body.id}
+            }
+            ).then(
+                res.redirect('/productos/'+req.body.id)
+            )
+        }else{
+            return res.render('user/login', { 
+                errors: {
+                    email:{
+                        msg: "Debes loguearte para realizar esta acción"
+                    }
+                },
                 old: req.body,
-                producto: req.body,
-                formType : "create"
-            });
+                formType: "login"
+            });    
         }
 
-        db.Products.update({
-            marca: req.body.marca,
-            nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
-            precio: req.body.precio,
-            stock: req.body.stock,
-            talle: req.body.talle,
-            image: req.body.imagen
-        },
-        {
-            where: {id: req.body.id}
-        }
-        ).then(
-            res.redirect('/productos/'+req.body.id)
-        )
     },
     deletedb: (req, res) =>{
         if (req.session.usuarioLogueado) {
