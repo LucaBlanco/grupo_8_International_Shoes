@@ -10,23 +10,24 @@
     <% if (productos.length>0) { %>
     <div class="productos-listado">
     <% productos.forEach(producto => { %>
-
-        <article class="item_producto">
-            <a href="/productos/<%= producto.id %>"><img src="/<%= producto.imagen %>" width="300" alt=""></a>
-            <div class="articulo">
-                <i class="fas fa-plane"></i>
-                <p class="precio-item">$<%= producto.precio%></p>
-                <h4 class="descripcion"><%= producto.marca%></h4>
-                <form action="/productos/borrardb?m=DELETE" method="post">
-                    <input type="hidden" name="id" value="<%= producto.id %>">
-                    <button class="borrar" type="submit"><i class="fas fa-trash-alt" style="border: none;"></i>Borrar</button>
-                </form>
-                <a class="editar" href="/productos/edit/<%= producto.id %>">
-                    <button class="editar" type="button"><i class="far fa-edit" style="border: none;"></i>Editar</button>
-                </a>
-            </div>
-        </article>
-
+                    <article class="item_producto">            
+                    <img src="/<%= producto.imagen %>" width="300" alt="">
+                    <div class="articulo">
+                        <a href="/productos/<%= producto.id %>"><i class="fas fa-plane"></i></a>                        
+                        <p class="precio-item">$<%= producto.precio%></p>
+                        <h4 class="descripcion"><%= producto.marca%></h4>
+                        <form action="/productos/borrardb?m=DELETE" method="post">
+                            <input type="hidden" name="id" value="<%= producto.id %>">
+                            <button class="borrar" type="submit"><i class="fas fa-trash-alt" style="border: none;"></i>Borrar</button>
+                        </form>
+                        <a class="editar" href="/productos/edit/<%= producto.id %>">
+                            <button class="editar" type="button"><i class="far fa-edit" style="border: none;"></i>Editar</button>
+                        </a>
+                        <a class="editar" href="/productos/carrito/<%= producto.id %>">
+                            <button class="editar" type="button"><i class="fas fa-cart-arrow-down"></i>Agregar al Carrito</button>
+                        </a>
+                    </div>
+            </article>
     <% }) %>
     </div>
     <% } else { %>

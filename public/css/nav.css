@@ -42,7 +42,7 @@ nav ul{
   list-style: none;
   box-sizing: border-box;
   justify-content: space-evenly;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-content: center;
   align-items: center;
 }
@@ -101,13 +101,12 @@ nav ul li.logo{
 
 
 nav ul div.items{
-    /* padding: 0 25px; */
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-between;
+  flex-direction: row;
 }
 
 

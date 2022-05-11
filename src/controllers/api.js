@@ -18,6 +18,7 @@ const getPagingData = (count, page, limit) => {
     const nextPage = page<totalPages ? page + 1 : page - 1;    
     return { totalPages, currentPage, nextPage, prevPage };
 };
+const host = 'http://localhost:3030/';
 
 const api = {   
     //users
