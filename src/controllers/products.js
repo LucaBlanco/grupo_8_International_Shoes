@@ -64,11 +64,6 @@ const controller = {
 
         let errors = validationResult(req);
         if (!errors.isEmpty()) {
-
-            //console.log('body:', req.body);
-            //console.log('Error:', errors);
-            //console.log('req.file:', req.file);
-
             return res.render('product/productEdit', { 
                 errors: errors.array(),
                 old: req.body,
@@ -94,14 +89,26 @@ const controller = {
         )
     },
     deletedb: (req, res) =>{
-        db.Products.destroy({
-            where: {
-                id: req.body.id
-            }
-        })
-        .then(
-            res.redirect('listadodb')
-        )
+        if (req.session.usuarioLogueado) {
+            db.Products.destroy({
+                where: {
+                    id: req.body.id
+                }
+            })
+            .then(
+                res.redirect('listadodb')
+            )    
+        }else{
+            return res.render('user/login', { 
+                errors: {
+                    email:{
+                        msg: "Debes loguearte para realizar esta acción"
+                    }
+                },
+                old: req.body,
+                formType: "login"
+            });    
+        }
     },
 
     //json
