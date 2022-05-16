@@ -3,18 +3,23 @@ const db = require('../database/models');
 
 const controller = {
     listFromDb: (req, res) => {
-        db.Products.findAll()
+        db.Products.findAll({include: [{association: "talles"}]})
             .then(function(productos) {
                 res.render('product/listado', { productos: productos })
             })
     },
     detailsdb: (req, res) => {
-        db.Products.findByPk(req.params.id)
+        db.Products.findOne({ 
+            where: {
+                id: req.params.id
+            },
+            include: [{association: "talles"}]
+            })
             .then(function(producto){
                 res.render('product/detalle_producto', {producto:producto});
             })
     },
-    createDb: (req, res) => {
+    createDb: async (req, res) => {
         if(req.file){
             req.body.imagen = req.file.filename;
         }
@@ -31,18 +36,31 @@ const controller = {
                 formType: "create"
             });
         }
+        console.log('rreq.body.talles:', req.body.talle);
 
-        db.Products.create({
-            marca: req.body.marca,
-            nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
-            precio: req.body.precio,
-            stock: req.body.stock,
-            talle: req.body.talle,
-            image: req.body.imagen
-        }).then(
-            res.redirect('listadodb')
-        )
+        let productCreated;
+        try {
+            productCreated = await db.Products.create({
+                marca: req.body.marca,
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                precio: req.body.precio,
+                stock: req.body.stock,
+                talle: req.body.talle,
+                image: req.body.imagen
+            })
+        } catch (error) {
+            res.render('error', {error:error})
+        }
+        if (productCreated) {
+            req.body.talle.forEach( async talle => {
+                await db.products_sizes.create({
+                    productId: productCreated.id,
+                    sizeId: talle
+                })
+            });
+            res.redirect('listadodb');
+        }
     },
     editDb: async (req, res) => {
         let productToEdit;

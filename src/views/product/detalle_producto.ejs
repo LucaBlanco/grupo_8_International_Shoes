@@ -22,8 +22,12 @@
             </div>
             <div>                
                 <select name="talles" id="talles" class="talles">
-                    <option value>Elegí una opción...</option>
-                            <option value="<%= producto.talle %>"><%= producto.talle %></option>
+                    <option value>Elegí un talle..</option>
+                            <% if (producto.talles != undefined) { %>
+                                <% producto.talles.forEach(talle => { %>
+                                    <option value="<%= talle.arg %>"><%= talle.arg %></option>
+                                <% }) %>
+                            <% } %>
                 </select>
             </div>
             <nav>

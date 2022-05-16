@@ -1,7 +1,7 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 
 module.exports = (Sequelize, DataTypes) => {
-    let alias = "Products";
+    let alias = "Sizes";
     let cols = {
         id: {
             type: DataTypes.INTEGER,
@@ -9,48 +9,45 @@ module.exports = (Sequelize, DataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        marca: {
+        arg: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        br: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        uk: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        nombre: {
+        us_man: {
             type: DataTypes.STRING,
-            allowNull: true
+            defaultValue: Sequelize.NOW,
+            allowNull: false
         },
-        descripcion: {
+        eur: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        precio: {
-            type: DataTypes.DECIMAL,
+        cm: {
+            type: DataTypes.DATE,
             allowNull: true
-        },
-        stock: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
-        talle: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
-        image: {
-            type: DataTypes.STRING,
-            allowNull: false
         }
     };
     let config = {
         timestamps: false
     }
 
-    const Products = Sequelize.define(alias, cols, config);
-    Products.associate = function(models){
-        Products.belongsToMany(models.Sizes, {
-            as: "talles",
-            through: "products_sizes",
-            foreingKey: "productId",
+    const Sizes = Sequelize.define(alias, cols, config);
+    Sizes.associate = function(models){
+        Sizes.belongsToMany(models.Products, {
+            as: "productos",
+            through: "productId",
+            foreingKey: "products_sizes",
             othreKey: "sizeId",
             timestamps: false
         })
     }
-    return Products;
+    return Sizes;
 }
