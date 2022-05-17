@@ -56,15 +56,23 @@ const api = {
         const size =  req.query.size ? req.query.size : "10";
         const { limit, offset } = getPagination(page, size);
         let {count, rows} = await db.Products.findAndCountAll({
-            offset: parseInt(offset), limit: parseInt(limit)
+            offset: parseInt(offset),
+            limit: parseInt(limit),
+            include: [{association: "talles"}]
         });
         const { totalPages, currentPage, nextPage, prevPage } = getPagingData(count, page, limit) ;
         res.json({ count, products : rows, totalPages, currentPage, nextPage, prevPage })
     },
+
     detailsProducts: (req, res) => {
-        db.Products.findByPk(req.params.id)
+        db.Products.findOne({ 
+            where: {
+                id: req.params.id
+            },
+                include: [{association: "talles"}]
+            })
             .then(function(producto){
-                res.json({producto})
+                res.json({producto});
             })
     }
 }

@@ -2,11 +2,16 @@ const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
 const controller = {
-    listFromDb: (req, res) => {
-        db.Products.findAll({include: [{association: "talles"}]})
-            .then(function(productos) {
-                res.render('product/listado', { productos: productos })
-            })
+    listFromDb: async (req, res) => {
+        try {
+            await db.Products.findAll({include: [{association: "talles"}]})
+                .then(function(productos) {
+                    res.render('product/listado', { productos: productos })
+                })            
+        } catch (error) {
+            res.render('error', {error:error})
+        }
+
     },
     detailsdb: (req, res) => {
         db.Products.findOne({ 
@@ -53,13 +58,18 @@ const controller = {
             res.render('error', {error:error})
         }
         if (productCreated) {
-            req.body.talle.forEach( async talle => {
-                await db.products_sizes.create({
-                    productId: productCreated.id,
-                    sizeId: talle
-                })
-            });
-            res.redirect('listadodb');
+            try {
+                req.body.talle.forEach( async talle => {
+                    await db.products_sizes.create({
+                        productId: productCreated.id,
+                        sizeId: talle
+                    })
+                });
+                res.redirect('listadodb');                   
+            } catch (error) {
+                res.render('error', {error:error})
+            }
+
         }
     },
     editDb: async (req, res) => {
